@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058B2381B02B0095A43B /* AppDelegate.swift */; };
 		FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058D2381B02B0095A43B /* SceneDelegate.swift */; };
-		FC5B05902381B02B0095A43B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058F2381B02B0095A43B /* ViewController.swift */; };
-		FC5B05932381B02B0095A43B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5B05912381B02B0095A43B /* Main.storyboard */; };
 		FC5B05952381B02C0095A43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5B05942381B02C0095A43B /* Assets.xcassets */; };
-		FC5B05982381B02C0095A43B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5B05962381B02C0095A43B /* LaunchScreen.storyboard */; };
+		FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */; };
+		FC5B05D42381E6E90095A43B /* PlanPlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D32381E6E90095A43B /* PlanPlayViewController.swift */; };
+		FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D52381E7030095A43B /* ScoreViewController.swift */; };
+		FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */; };
+		FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */; };
+		FCD5AA952381F02F00738DCB /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA8E2381F02E00738DCB /* Score.storyboard */; };
+		FCD5AA962381F02F00738DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA8F2381F02E00738DCB /* Main.storyboard */; };
+		FCD5AA972381F02F00738DCB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA902381F02F00738DCB /* Settings.storyboard */; };
+		FCD5AA982381F02F00738DCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA912381F02F00738DCB /* LaunchScreen.storyboard */; };
+		FCD5AA992381F02F00738DCB /* Challenges.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA922381F02F00738DCB /* Challenges.storyboard */; };
+		FCD5AA9A2381F02F00738DCB /* PlanPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */; };
+		FCD5AA9B2381F02F00738DCB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA942381F02F00738DCB /* Achievements.storyboard */; };
+		FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FC5B05882381B02B0095A43B /* StreetDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5B058B2381B02B0095A43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5B058D2381B02B0095A43B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC5B058F2381B02B0095A43B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FC5B05922381B02B0095A43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC5B05942381B02C0095A43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC5B05972381B02C0095A43B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC5B05992381B02C0095A43B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengesViewController.swift; sourceTree = "<group>"; };
+		FC5B05D32381E6E90095A43B /* PlanPlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanPlayViewController.swift; sourceTree = "<group>"; };
+		FC5B05D52381E7030095A43B /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
+		FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FCD5AA8E2381F02E00738DCB /* Score.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
+		FCD5AA8F2381F02E00738DCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FCD5AA902381F02F00738DCB /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		FCD5AA912381F02F00738DCB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCD5AA922381F02F00738DCB /* Challenges.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Challenges.storyboard; sourceTree = "<group>"; };
+		FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlanPlay.storyboard; sourceTree = "<group>"; };
+		FCD5AA942381F02F00738DCB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
+		FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +76,22 @@
 		FC5B058A2381B02B0095A43B /* StreetDraw */ = {
 			isa = PBXGroup;
 			children = (
+				FC5B05942381B02C0095A43B /* Assets.xcassets */,
 				FC5B058B2381B02B0095A43B /* AppDelegate.swift */,
 				FC5B058D2381B02B0095A43B /* SceneDelegate.swift */,
-				FC5B058F2381B02B0095A43B /* ViewController.swift */,
-				FC5B05912381B02B0095A43B /* Main.storyboard */,
-				FC5B05942381B02C0095A43B /* Assets.xcassets */,
-				FC5B05962381B02C0095A43B /* LaunchScreen.storyboard */,
+				FCD5AA912381F02F00738DCB /* LaunchScreen.storyboard */,
+				FCD5AA8F2381F02E00738DCB /* Main.storyboard */,
+				FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */,
+				FCD5AA922381F02F00738DCB /* Challenges.storyboard */,
+				FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */,
+				FCD5AA942381F02F00738DCB /* Achievements.storyboard */,
+				FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */,
+				FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */,
+				FC5B05D32381E6E90095A43B /* PlanPlayViewController.swift */,
+				FCD5AA8E2381F02E00738DCB /* Score.storyboard */,
+				FC5B05D52381E7030095A43B /* ScoreViewController.swift */,
+				FCD5AA902381F02F00738DCB /* Settings.storyboard */,
+				FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */,
 				FC5B05992381B02C0095A43B /* Info.plist */,
 			);
 			path = StreetDraw;
@@ -125,9 +155,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5B05982381B02C0095A43B /* LaunchScreen.storyboard in Resources */,
+				FCD5AA962381F02F00738DCB /* Main.storyboard in Resources */,
+				FCD5AA9B2381F02F00738DCB /* Achievements.storyboard in Resources */,
+				FCD5AA972381F02F00738DCB /* Settings.storyboard in Resources */,
+				FCD5AA952381F02F00738DCB /* Score.storyboard in Resources */,
+				FCD5AA992381F02F00738DCB /* Challenges.storyboard in Resources */,
 				FC5B05952381B02C0095A43B /* Assets.xcassets in Resources */,
-				FC5B05932381B02B0095A43B /* Main.storyboard in Resources */,
+				FCD5AA9A2381F02F00738DCB /* PlanPlay.storyboard in Resources */,
+				FCD5AA982381F02F00738DCB /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,32 +173,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC5B05902381B02B0095A43B /* ViewController.swift in Sources */,
 				FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */,
+				FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */,
+				FC5B05D42381E6E90095A43B /* PlanPlayViewController.swift in Sources */,
+				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,
 				FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */,
+				FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */,
+				FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */,
+				FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FC5B05912381B02B0095A43B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC5B05922381B02B0095A43B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FC5B05962381B02C0095A43B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC5B05972381B02C0095A43B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FC5B059A2381B02C0095A43B /* Debug */ = {

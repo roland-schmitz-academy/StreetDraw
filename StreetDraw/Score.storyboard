@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Score-->
+        <scene sceneID="VM7-Vo-wOF">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-IU9-if-kOy" title="Score" id="IU9-if-kOy" customClass="ScoreViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q6S-vN-4hI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-qM-G3S">
+                                <rect key="frame" x="63" y="44" width="298" height="457"/>
+                                <string key="text">(Replace with 
+Resume/FinalScore View with - resulting map with track - Challenge with track and accuracy 
+- Score
+
+Implement two modes
+1. Score, Resume and End Button visible 
+2. Final Score, Retry, Challenges, Next Challenge visible
+</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZJ-y2-0Yj">
+                                <rect key="frame" x="68" y="633" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Retry"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tIc-ON-Yox">
+                                <rect key="frame" x="169" y="633" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Challenges"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pT-Tk-kHV">
+                                <rect key="frame" x="267" y="633" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Next Challenge"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvB-St-6zS">
+                                <rect key="frame" x="192" y="553" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="End"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RM0-X3-TyS">
+                                <rect key="frame" x="63" y="553" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Resume"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sjB-Pm-Rib" firstAttribute="bottom" secondItem="Diz-qM-G3S" secondAttribute="bottom" constant="361" id="EU3-rA-IO8"/>
+                            <constraint firstItem="Diz-qM-G3S" firstAttribute="leading" secondItem="sjB-Pm-Rib" secondAttribute="leading" constant="63" id="Pql-c7-4Y0"/>
+                            <constraint firstItem="Diz-qM-G3S" firstAttribute="top" secondItem="sjB-Pm-Rib" secondAttribute="top" id="TcD-nZ-loj"/>
+                            <constraint firstItem="sjB-Pm-Rib" firstAttribute="trailing" secondItem="Diz-qM-G3S" secondAttribute="trailing" constant="53" id="Tg0-hW-DWc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sjB-Pm-Rib"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5ff-dz-yk0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hB-an-c4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747.826086956522" y="215.625"/>
+        </scene>
+    </scenes>
+</document>

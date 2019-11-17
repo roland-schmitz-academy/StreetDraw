@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JmR-93-koc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="hV8-fw-mvw">
+            <objects>
+                <viewController title="Settings" id="JmR-93-koc" customClass="SettingsViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t0l-tr-juh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replace with Settings when needed and connect TabBar to Navbar to enable" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2g-op-etk">
+                                <rect key="frame" x="35" y="162" width="344" height="309"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="T2g-op-etk" firstAttribute="centerX" secondItem="t0l-tr-juh" secondAttribute="centerX" id="Dhc-h6-mkn"/>
+                            <constraint firstItem="T2g-op-etk" firstAttribute="leading" secondItem="gRq-Dn-qwD" secondAttribute="leading" constant="35" id="QDH-5j-clo"/>
+                            <constraint firstItem="gRq-Dn-qwD" firstAttribute="bottom" secondItem="T2g-op-etk" secondAttribute="bottom" constant="391" id="aIc-HT-q5E"/>
+                            <constraint firstItem="T2g-op-etk" firstAttribute="top" secondItem="gRq-Dn-qwD" secondAttribute="top" constant="118" id="dza-40-Y7m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gRq-Dn-qwD"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="ThF-cL-Zl2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLE-17-pUS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3779.7101449275365" y="215.625"/>
+        </scene>
+    </scenes>
+</document>
