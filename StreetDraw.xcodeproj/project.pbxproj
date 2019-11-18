@@ -23,6 +23,9 @@
 		FCD5AA9A2381F02F00738DCB /* PlanPlay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */; };
 		FCD5AA9B2381F02F00738DCB /* Achievements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA942381F02F00738DCB /* Achievements.storyboard */; };
 		FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */; };
+		FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AA9E23830B6A00738DCB /* DataModel.swift */; };
+		FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */; };
+		FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA423835B0400738DCB /* Stopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlanPlay.storyboard; sourceTree = "<group>"; };
 		FCD5AA942381F02F00738DCB /* Achievements.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Achievements.storyboard; sourceTree = "<group>"; };
 		FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		FCD5AA9E23830B6A00738DCB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrawApplicationFactory.swift; sourceTree = "<group>"; };
+		FCD5AAA423835B0400738DCB /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,9 @@
 				FCD5AA902381F02F00738DCB /* Settings.storyboard */,
 				FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */,
 				FC5B05992381B02C0095A43B /* Info.plist */,
+				FCD5AA9E23830B6A00738DCB /* DataModel.swift */,
+				FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */,
+				FCD5AAA423835B0400738DCB /* Stopwatch.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -177,10 +186,13 @@
 				FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */,
 				FC5B05D42381E6E90095A43B /* PlanPlayViewController.swift in Sources */,
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,
+				FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */,
 				FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */,
+				FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */,
 				FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */,
 				FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */,
 				FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */,
+				FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
