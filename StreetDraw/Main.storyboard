@@ -10,7 +10,7 @@
         <scene sceneID="Rek-gi-aAT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ief-CG-ODp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Achievements" image="checkmark.seal" catalog="system" id="Lkn-ak-O2r"/>
+                    <tabBarItem key="tabBarItem" title="Achievements" image="checkmark.seal.fill" catalog="system" id="Lkn-ak-O2r"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ez3-aK-jJJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -29,7 +29,7 @@
         <scene sceneID="vbt-V4-b84">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OQg-IM-HIi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Game" image="square" catalog="system" id="YgN-3C-FLG"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="man-walking-1" id="YgN-3C-FLG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NXa-Fb-CWU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -130,8 +130,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="checkmark.seal" catalog="system" width="64" height="60"/>
+        <image name="checkmark.seal.fill" catalog="system" width="64" height="60"/>
         <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="square" catalog="system" width="64" height="56"/>
+        <image name="man-walking-1" width="24" height="30"/>
     </resources>
 </document>
