@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AchievementsViewController: UIViewController {
+class AchievementsViewController: UILoggingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

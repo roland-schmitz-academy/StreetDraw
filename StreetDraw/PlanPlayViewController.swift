@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlanPlayViewController: UIViewController {
+class PlanPlayViewController: UILoggingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

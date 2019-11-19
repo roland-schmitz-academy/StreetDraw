@@ -26,6 +26,7 @@
 		FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AA9E23830B6A00738DCB /* DataModel.swift */; };
 		FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */; };
 		FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA423835B0400738DCB /* Stopwatch.swift */; };
+		FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		FCD5AA9E23830B6A00738DCB /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrawApplicationFactory.swift; sourceTree = "<group>"; };
 		FCD5AAA423835B0400738DCB /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
+		FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoggingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				FCD5AA9E23830B6A00738DCB /* DataModel.swift */,
 				FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */,
 				FCD5AAA423835B0400738DCB /* Stopwatch.swift */,
+				FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */,
 				FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */,
 				FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */,
+				FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */,
 				FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */,
 				FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */,
 				FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */,

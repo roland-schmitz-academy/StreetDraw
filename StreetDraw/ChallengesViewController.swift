@@ -8,12 +8,19 @@
 
 import UIKit
 
-class ChallengesViewController: UIViewController {
+class ChallengesViewController: UILoggingViewController {
 
+    var streetDrawApp: StreetDrawApplication? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.streetDrawApp
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ChallengesViewController.viewDidLoad()")
-
+        print("streetDrawApp: \(streetDrawApp)")
+        
+        
         // Do any additional setup after loading the view.
     }
     

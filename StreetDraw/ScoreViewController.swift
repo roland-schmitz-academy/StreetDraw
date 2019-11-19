@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScoreViewController: UIViewController {
+class ScoreViewController: UILoggingViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
