@@ -27,6 +27,7 @@
 		FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */; };
 		FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA423835B0400738DCB /* Stopwatch.swift */; };
 		FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */; };
+		FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreetDrawApplicationFactory.swift; sourceTree = "<group>"; };
 		FCD5AAA423835B0400738DCB /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoggingViewController.swift; sourceTree = "<group>"; };
+		FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */,
 				FCD5AA922381F02F00738DCB /* Challenges.storyboard */,
 				FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */,
+				FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */,
 				FCD5AA942381F02F00738DCB /* Achievements.storyboard */,
 				FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */,
 				FCD5AA932381F02F00738DCB /* PlanPlay.storyboard */,
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */,
+				FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */,
 				FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */,
 				FC5B05D42381E6E90095A43B /* PlanPlayViewController.swift in Sources */,
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,

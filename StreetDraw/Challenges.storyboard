@@ -15,25 +15,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4oG-MP-ddH">
-                                <rect key="frame" x="20" y="110" width="374" height="588"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4oG-MP-ddH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="95" id="kUS-8d-Su4">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="95"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChallengeCell" rowHeight="104" id="pC3-XS-dkW" customClass="ChallengeTableViewCell" customModule="StreetDraw" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="104"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kUS-8d-Su4" id="d3S-1Q-1ls">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="95"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pC3-XS-dkW" id="ueD-Iz-pRA">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="104"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qY5-dL-vE2">
-                                                    <rect key="frame" x="14" y="11" width="73" height="73"/>
+                                                <view contentMode="scaleToFill" id="mRX-5P-gSd">
+                                                    <rect key="frame" x="20" y="11" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8t-0o-rPZ">
-                                                    <rect key="frame" x="106" y="37" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkJ-uo-NnE">
+                                                    <rect key="frame" x="119" y="11" width="235" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -41,22 +40,22 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="mkJ-uo-NnE" id="XCq-yK-73c"/>
+                                            <outlet property="shapeView" destination="mRX-5P-gSd" id="lvf-i9-uui"/>
+                                            <segue destination="HRl-hd-jst" kind="show" identifier="ShowChallengeDetails" id="c3L-Iw-lSk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aw5-Gj-yK5">
-                                <rect key="frame" x="55" y="747" width="304" height="30"/>
-                                <state key="normal" title="Placeholder for Navigation to StartAndGame"/>
-                                <connections>
-                                    <segue destination="HRl-hd-jst" kind="show" id="Q2f-jW-eOF"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="zh0-BD-DNf" firstAttribute="bottom" secondItem="aw5-Gj-yK5" secondAttribute="bottom" constant="85" id="Chr-Ts-fe6"/>
-                            <constraint firstItem="aw5-Gj-yK5" firstAttribute="centerX" secondItem="rOO-Qs-GQu" secondAttribute="centerX" id="m9H-VN-m9x"/>
+                            <constraint firstItem="4oG-MP-ddH" firstAttribute="leading" secondItem="zh0-BD-DNf" secondAttribute="leading" id="NVu-ld-iiu"/>
+                            <constraint firstItem="4oG-MP-ddH" firstAttribute="bottom" secondItem="zh0-BD-DNf" secondAttribute="bottom" id="PU9-uk-off"/>
+                            <constraint firstItem="4oG-MP-ddH" firstAttribute="top" secondItem="zh0-BD-DNf" secondAttribute="top" id="jEm-mo-ueI"/>
+                            <constraint firstItem="4oG-MP-ddH" firstAttribute="centerX" secondItem="rOO-Qs-GQu" secondAttribute="centerX" id="oxq-c8-V1Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zh0-BD-DNf"/>
                     </view>
@@ -72,7 +71,9 @@
         <!--UIViewController-8b7-eH-PRO-->
         <scene sceneID="p4p-Ai-H1f">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-8b7-eH-PRO" id="HRl-hd-jst" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-8b7-eH-PRO" id="HRl-hd-jst" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CC7-PU-mNU"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZG-q1-kb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.75362318840587" y="215.625"/>

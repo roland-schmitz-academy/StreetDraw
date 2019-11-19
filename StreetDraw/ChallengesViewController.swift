@@ -10,7 +10,6 @@ import UIKit
 
 class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
     
-    
     @IBOutlet weak var chaptersAndChallengesTableView: UITableView!
     
     var streetDrawApp: StreetDrawApplication? {
@@ -35,9 +34,24 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("cellForRowAt \(indexPath) ?")
-        return UITableViewCell()
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChallengeCell", for: indexPath)
+        if let challengeCell = cell as? ChallengeTableViewCell {
+            let section = indexPath.section
+            let row = indexPath.row
+            if let chapter = streetDrawApp?.chapters[section] {
+                let challenge = chapter.challenges[row]
+                challengeCell.prepareFor(chapter: chapter, challenge: challenge)
+            }
+        }
+        return cell
     }
+
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        print("cellForRowAt \(indexPath) ?")
+//        return tableView.dequeueReusableCell(withIdentifier: "challenge") ?? <#default value#>
+////        return ChallengeTableViewCell(chapter: streetDrawApp?.chapters[indexPath.first], challenge: streetDrawApp?.chapters[indexPath.first]?.)
+//
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         print("numberOfSections() ?")
