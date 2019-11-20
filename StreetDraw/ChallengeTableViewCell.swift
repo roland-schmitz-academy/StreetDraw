@@ -14,6 +14,8 @@ class ChallengeTableViewCell: UITableViewCell {
     
     @IBOutlet weak var shapeView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var minDistanceLabel: UILabel!
+    @IBOutlet weak var timeLimitLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
