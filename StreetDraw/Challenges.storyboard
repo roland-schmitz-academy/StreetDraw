@@ -65,10 +65,10 @@
                                                     <rect key="frame" x="20" y="12" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <view alpha="0.5" contentMode="scaleToFill" id="mRX-5P-gSd" customClass="ShapeView" customModule="StreetDraw" customModuleProvider="target">
+                                                        <view contentMode="scaleToFill" id="mRX-5P-gSd" customClass="ShapeView" customModule="StreetDraw" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,6 +84,7 @@
                                         <connections>
                                             <outlet property="minDistanceLabel" destination="GF3-Fe-sNw" id="HRl-aG-2DF"/>
                                             <outlet property="nameLabel" destination="mkJ-uo-NnE" id="XCq-yK-73c"/>
+                                            <outlet property="shapeBackgroundView" destination="ihr-nL-YQO" id="wdE-jQ-eSN"/>
                                             <outlet property="shapeView" destination="mRX-5P-gSd" id="lvf-i9-uui"/>
                                             <outlet property="timeLimitCaption" destination="K5K-mP-IBM" id="qL1-pC-jiE"/>
                                             <outlet property="timeLimitLabel" destination="thc-1j-2dj" id="IIm-OB-h8a"/>

@@ -13,6 +13,7 @@ class ChallengeTableViewCell: UITableViewCell {
     var challenge: Challenge?
     
     @IBOutlet weak var shapeView: ShapeView!
+    @IBOutlet weak var shapeBackgroundView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var minDistanceLabel: UILabel!
     @IBOutlet weak var timeLimitLabel: UILabel!
