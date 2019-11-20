@@ -28,6 +28,7 @@ class ChallengeTableViewCell: UITableViewCell {
         nameLabel.text = challenge.name
         shapeView.show(shape: challenge.shape)
         minDistanceLabel.text = challenge.minDistance.description
+        timeLimitLabel.text = challenge.maxDuration?.description
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
