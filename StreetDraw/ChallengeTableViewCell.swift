@@ -12,7 +12,7 @@ class ChallengeTableViewCell: UITableViewCell {
     var chapter: Chapter?
     var challenge: Challenge?
     
-    @IBOutlet weak var shapeView: UIView!
+    @IBOutlet weak var shapeView: ShapeView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var minDistanceLabel: UILabel!
     @IBOutlet weak var timeLimitLabel: UILabel!
@@ -26,6 +26,7 @@ class ChallengeTableViewCell: UITableViewCell {
         self.chapter = chapter
         self.challenge = challenge
         nameLabel.text = challenge.name
+        shapeView.show(shape: challenge.shape)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
