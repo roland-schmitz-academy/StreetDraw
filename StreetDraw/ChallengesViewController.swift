@@ -24,8 +24,9 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
         print("streetDrawApp: \(String(describing: streetDrawApp?.chapters))")
         
         
-        // Do any additional setup after loading the view.
+        
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("numberOfRowsInSection \(section) ?")
