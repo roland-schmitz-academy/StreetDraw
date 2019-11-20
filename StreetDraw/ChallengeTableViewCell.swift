@@ -23,7 +23,7 @@ class ChallengeTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     func prepareFor(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
         self.challenge = challenge
@@ -38,13 +38,21 @@ class ChallengeTableViewCell: UITableViewCell {
             timeLimitCaption.alpha = 0.0
             timeLimitLabel.alpha = 0.0
         }
+        switch challenge.difficulty {
+        case .easy:
+            shapeBackgroundView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1) 
+        case .normal:
+            shapeBackgroundView.backgroundColor = .orange
+        case .hard:
+            shapeBackgroundView.backgroundColor = .red
+        }
         
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
