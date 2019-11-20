@@ -16,6 +16,7 @@ class ChallengeTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var minDistanceLabel: UILabel!
     @IBOutlet weak var timeLimitLabel: UILabel!
+    @IBOutlet weak var timeLimitCaption: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +29,15 @@ class ChallengeTableViewCell: UITableViewCell {
         nameLabel.text = challenge.name
         shapeView.show(shape: challenge.shape)
         minDistanceLabel.text = challenge.minDistance.description
-        timeLimitLabel.text = challenge.maxDuration?.description
+        if let maxDuration = challenge.maxDuration {
+            timeLimitLabel.text = maxDuration.description
+            timeLimitCaption.alpha = 1.0
+            timeLimitLabel.alpha = 1.0
+        } else {
+            timeLimitCaption.alpha = 0.0
+            timeLimitLabel.alpha = 0.0
+        }
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
