@@ -21,6 +21,7 @@ enum Difficulty {
 struct Challenge {
     let name: String
     let shape: Shape
+    // Distance in kilometers
     let minDistance: CLLocationDistance
     let maxDuration: TimeInterval?
     let standardScore: Int

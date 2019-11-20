@@ -27,6 +27,7 @@ class ChallengeTableViewCell: UITableViewCell {
         self.challenge = challenge
         nameLabel.text = challenge.name
         shapeView.show(shape: challenge.shape)
+        minDistanceLabel.text = challenge.minDistance.description
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
