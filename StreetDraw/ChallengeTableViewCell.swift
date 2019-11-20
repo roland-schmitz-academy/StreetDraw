@@ -40,11 +40,11 @@ class ChallengeTableViewCell: UITableViewCell {
         }
         switch challenge.difficulty {
         case .easy:
-            shapeBackgroundView.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1) 
+            shapeBackgroundView.backgroundColor = .systemGreen
         case .normal:
-            shapeBackgroundView.backgroundColor = .orange
+            shapeBackgroundView.backgroundColor = .systemOrange
         case .hard:
-            shapeBackgroundView.backgroundColor = .red
+            shapeBackgroundView.backgroundColor = .systemRed
         }
         
     }
