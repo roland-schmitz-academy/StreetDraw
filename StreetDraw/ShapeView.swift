@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+@IBDesignable
 class ShapeView: UIView {
     
     var shape: Shape?
@@ -35,35 +35,28 @@ class ShapeView: UIView {
     
     override func draw(_ rect: CGRect) {
         print("draw")
+        
+        path = UIBezierPath()
+        path.lineWidth = 4.0
+        path.lineCapStyle = .round
+        path.lineJoinStyle = .round
+        tintColor.setStroke()
+        
+        
         if let shape = shape, shape.points.count > 1 {
             let scale: CGFloat = 20.0
 
             print("draw with shape")
             
-            path = UIBezierPath()
-            
-            path.lineWidth = 4.0
-            path.lineCapStyle = .round
-            path.lineJoinStyle = .round
             path.move(to: CGPoint(x: shape.points[0].x  * scale + 2, y: shape.points[0].y * scale + 2))
             
-            
             for point in shape.points.dropFirst() {
-                
-            
-            path.addLine(to: CGPoint(x: point.x  * scale + 2, y: point.y * scale + 2))
-                
+                path.addLine(to: CGPoint(x: point.x  * scale + 2, y: point.y * scale + 2))
             }
             path.stroke()
-            
-            
 
-            
-            
-            
         } else {
             // Draw a cross in case we dont have a shape
-            path = UIBezierPath()
             path.move(to: CGPoint(x: 0.0 , y: 0.0))
             path.addLine(to: CGPoint( x: self.bounds.width, y: self.bounds.height))
             path.move(to: CGPoint(x: 0.0 , y: self.bounds.height))
