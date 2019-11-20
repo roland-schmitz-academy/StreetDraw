@@ -10,6 +10,8 @@ import UIKit
 
 class ShapeView: UIView {
 
+    var shape: Shape?
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -20,7 +22,16 @@ class ShapeView: UIView {
     
     override func draw(_ rect: CGRect) {
         print("draw")
+        if let shape = shape {
+            print("draw with shape")
+            
+            
+        }
         
     }
 
+    func show(shape: Shape){
+        self.shape = shape
+    }
+    
 }
