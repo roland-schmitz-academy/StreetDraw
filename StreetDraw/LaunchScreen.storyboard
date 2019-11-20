@@ -15,19 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanch-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mcp-Vz-rxF">
+                                <rect key="frame" x="127" y="368" width="160" height="160"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StreetDraw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-T1-9fQ">
-                                <rect key="frame" x="0.0" y="427.5" width="414" height="41"/>
+                                <rect key="frame" x="169" y="536" width="77" height="18"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <color key="textColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FRF-vw-ORn"/>
-                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kXa-1i-ERy"/>
-                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mAZ-Vp-9ji"/>
+                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FpF-NZ-FlU"/>
+                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="top" secondItem="mcp-Vz-rxF" secondAttribute="bottom" constant="8" id="NSU-90-IS9"/>
+                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerX" secondItem="BTh-T1-9fQ" secondAttribute="centerX" id="OaS-w5-N32"/>
+                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gWI-xX-DZo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,4 +41,7 @@
             <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="lanch-icon" width="160" height="160"/>
+    </resources>
 </document>
