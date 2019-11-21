@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8b7-eH-PRO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start Game View Controller-->
+        <scene sceneID="0nQ-Lj-JXa">
+            <objects>
+                <viewController storyboardIdentifier="UIViewController-8b7-eH-PRO" id="8b7-eH-PRO" customClass="StartGameViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="trl-Gh-IPA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yru-4j-Uw6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="615"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="637" id="3r1-5o-7Tu"/>
+                                </constraints>
+                            </mapView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-JZ-hqn">
+                                <rect key="frame" x="0.0" y="667" width="414" height="195"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gN-me-sH1" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="128" width="378" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title="Start"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="14"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="20C-Qr-D9I" kind="show" id="JZy-N8-aKk"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3,1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-Gh-7r9">
+                                        <rect key="frame" x="73" y="25" width="49" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-Yx-dPU">
+                                        <rect key="frame" x="73" y="60" width="142" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:50:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLn-EW-s3m">
+                                        <rect key="frame" x="244" y="24" width="118" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timelimit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJo-sR-SvM">
+                                        <rect key="frame" x="244" y="59" width="70" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="195" id="GZK-zz-krd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="leading" secondItem="uBT-1D-Xei" secondAttribute="leading" id="1G3-jc-e5w"/>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="top" secondItem="uBT-1D-Xei" secondAttribute="top" id="8nW-yt-hkg"/>
+                            <constraint firstItem="2T3-JZ-hqn" firstAttribute="top" secondItem="yru-4j-Uw6" secondAttribute="bottom" id="Die-Aw-NtP"/>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="trailing" secondItem="2T3-JZ-hqn" secondAttribute="trailing" id="Evi-0E-Hgb"/>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="centerX" secondItem="trl-Gh-IPA" secondAttribute="centerX" id="Faj-XB-eb3"/>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="leading" secondItem="2T3-JZ-hqn" secondAttribute="leading" id="OEE-cl-R5k"/>
+                            <constraint firstItem="uBT-1D-Xei" firstAttribute="bottom" secondItem="2T3-JZ-hqn" secondAttribute="bottom" id="TMd-6u-gf5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uBT-1D-Xei"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WLx-Gt-Qv4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gy2-ml-3do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="998.55072463768124" y="334.82142857142856"/>
+        </scene>
+        <!--PlayGame-->
+        <scene sceneID="I7R-mq-kdr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayGame" id="20C-Qr-D9I" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3cz-Bh-Uks"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhd-ic-Z88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="335"/>
+        </scene>
+    </scenes>
+</document>

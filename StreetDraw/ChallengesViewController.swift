@@ -46,13 +46,6 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
         }
         return cell
     }
-
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        print("cellForRowAt \(indexPath) ?")
-//        return tableView.dequeueReusableCell(withIdentifier: "challenge") ?? <#default value#>
-////        return ChallengeTableViewCell(chapter: streetDrawApp?.chapters[indexPath.first], challenge: streetDrawApp?.chapters[indexPath.first]?.)
-//
-//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         print("numberOfSections() ?")

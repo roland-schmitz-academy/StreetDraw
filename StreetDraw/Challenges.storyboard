@@ -89,7 +89,7 @@
                                             <outlet property="shapeView" destination="mRX-5P-gSd" id="lvf-i9-uui"/>
                                             <outlet property="timeLimitCaption" destination="K5K-mP-IBM" id="qL1-pC-jiE"/>
                                             <outlet property="timeLimitLabel" destination="thc-1j-2dj" id="IIm-OB-h8a"/>
-                                            <segue destination="HRl-hd-jst" kind="show" identifier="ShowChallengeDetails" id="c3L-Iw-lSk"/>
+                                            <segue destination="Nla-bb-stz" kind="show" id="UUp-D6-4iw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,15 +114,15 @@
             </objects>
             <point key="canvasLocation" x="-149.27536231884059" y="215.625"/>
         </scene>
-        <!--UIViewController-8b7-eH-PRO-->
-        <scene sceneID="p4p-Ai-H1f">
+        <!--StartGame-->
+        <scene sceneID="ngN-40-0YD">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="UIViewController-8b7-eH-PRO" id="HRl-hd-jst" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="CC7-PU-mNU"/>
+                <viewControllerPlaceholder storyboardName="StartGame" id="Nla-bb-stz" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="I8O-MF-LDy"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iZG-q1-kb6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lv0-LZ-2ja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.75362318840587" y="215.625"/>
+            <point key="canvasLocation" x="471" y="216"/>
         </scene>
     </scenes>
 </document>

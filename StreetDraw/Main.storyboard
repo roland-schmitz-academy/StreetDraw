@@ -92,22 +92,6 @@
             </objects>
             <point key="canvasLocation" x="-149.27536231884059" y="215.625"/>
         </scene>
-        <!--UIViewController-8b7-eH-PRO-->
-        <scene sceneID="fpO-ug-1hD">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-8b7-eH-PRO" storyboardName="PlanPlay" referencedIdentifier="UIViewController-8b7-eH-PRO" id="IOn-hs-y0s" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8l0-wx-jDL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="792.75362318840587" y="215.625"/>
-        </scene>
-        <!--UIViewController-IU9-if-kOy-->
-        <scene sceneID="rd0-sI-lK4">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="UIViewController-IU9-if-kOy" storyboardName="Score" referencedIdentifier="UIViewController-IU9-if-kOy" id="1au-R8-iyg" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xIO-7k-NaW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1747.826086956522" y="215.625"/>
-        </scene>
         <!--Achievements-->
         <scene sceneID="uO8-7P-ItN">
             <objects>
