@@ -238,44 +238,54 @@ func createStreetDrawApplication() -> StreetDrawApplication {
             Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 0.1, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
         ]),
         Chapter(name: "Warmup", challenges: [
-            Challenge(name: "Square", shape: square, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Rhombus", shape: rhombus, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Square", shape: square, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rectangle", shape: rectangle, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rhombus", shape: rhombus, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
         ]),
         
         Chapter(name: "Get ready", challenges: [
-            Challenge(name: "Square", shape: square, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Rectangle", shape: rectangle, minDistance: 1.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Triangle", shape: triangle, minDistance: 0.4, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Star", shape: star, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal )
+        ]),
+        
+        Chapter(name: "Challenging", challenges: [
+            Challenge(name: "Pentagon", shape: pentagon, minDistance: 0.4, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Hexagon", shape: hexagon, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
+            Challenge(name: "Octagon", shape: octagon, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard)
         ]),
         
         Chapter(name: "Engaging", challenges: [
-            // todo
+            Challenge(name: "Flute", shape: flute, minDistance: 0.4, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
+            Challenge(name: "Bottle", shape: bottle, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
         ]),
+        
         Chapter(name: "Serious", challenges: [
-            // todo
+            Challenge(name: "H letter", shape: hLetter, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
+            Challenge(name: "L letter", shape: lLetter, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "C letter", shape: cLetter, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
+            Challenge(name: "X letter", shape: xLetter, minDistance: 0.2, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
         ]),
-        Chapter(name: "Challenging", challenges: [
-            // todo
-        ]),
+        
         Chapter(name: "Crazy", challenges: [
-            // todo
+        
         ]),
         Chapter(name: "Impossible", challenges: [
-            // todo
+             Challenge(name: "Heart", shape: heart, minDistance: 0.8, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
         ]),
-        Chapter(name: "Antonio", challenges: [
-            // todo
-        ]),
-        Chapter(name: "Luigi", challenges: [
-            // todo
-        ]),
-        Chapter(name: "Pasquale", challenges: [
-            // todo
-        ]),
-        Chapter(name: "Roland", challenges: [
-            // todo
-        ]),
-        Chapter(name: "Tareq", challenges: [
-            // todo
-        ])
+//        Chapter(name: "Antonio", challenges: [
+//            // todo
+//        ]),
+//        Chapter(name: "Luigi", challenges: [
+//            // todo
+//        ]),
+//        Chapter(name: "Pasquale", challenges: [
+//            // todo
+//        ]),
+//        Chapter(name: "Roland", challenges: [
+//            // todo
+//        ]),
+//        Chapter(name: "Tareq", challenges: [
+//            // todo
+//        ])
     ])
 }
