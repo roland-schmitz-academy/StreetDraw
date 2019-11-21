@@ -24,6 +24,26 @@ func createStreetDrawApplication() -> StreetDrawApplication {
         CGPoint(x: 2,y: 0),
         CGPoint(x: 0,y: 0)
     ])
+    let rhombus = Shape(points: [
+        CGPoint(x: 0.5,y: 0),
+        CGPoint(x: 0,y: 1),
+        CGPoint(x: 0.5,y: 2),
+        CGPoint(x: 1,y: 1),
+        CGPoint(x: 0.5,y: 0)
+    ])
+    let star = Shape(points: [
+        CGPoint(x: 1.5,y: 0),
+        CGPoint(x: 1,y: 1),
+        CGPoint(x: 0,y: 1),
+        CGPoint(x: 1,y: 1.5),
+        CGPoint(x: 0.5,y: 2.5),
+        CGPoint(x: 1.5,y: 2),
+        CGPoint(x: 2.5,y: 2.5),
+        CGPoint(x: 2,y: 1.5),
+        CGPoint(x: 3,y: 1),
+        CGPoint(x: 2,y: 1),
+        CGPoint(x: 1.5,y: 0)
+    ])
     
     // todo: define more shapes
     
@@ -31,8 +51,8 @@ func createStreetDrawApplication() -> StreetDrawApplication {
         Chapter(name: "Test", challenges: [
             Challenge(name: "Small Square", shape: square, minDistance: 100.0, maxDuration: 20.5, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
             Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Big Square 2", shape: square, minDistance: 100.0, maxDuration: 20.5, standardScore: 100, penaltyScore: nil, difficulty: .normal ),
+            Challenge(name: "Small Rectangle", shape: rhombus, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Big Square 2", shape: star, minDistance: 100.0, maxDuration: 20.5, standardScore: 100, penaltyScore: nil, difficulty: .normal ),
             Challenge(name: "Big Rectangle 2", shape: rectangle, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .hard),
         ]),
         
