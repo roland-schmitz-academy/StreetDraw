@@ -10,11 +10,24 @@ import UIKit
 
 class StartGameViewController: UILoggingViewController {
 
+    var chapter: Chapter?
+    var challenge: Challenge?
+    
+    @IBOutlet weak var shapeView: ShapeView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("StartGameViewController.viewDidLoad()")
 
+        shapeView.tintColor = challenge?.difficulty.getColor()
+        shapeView.show(shape: challenge?.shape)
+
         // Do any additional setup after loading the view.
+    }
+    
+    func prepareFor(chapter: Chapter, challenge: Challenge) {
+        self.chapter = chapter
+        self.challenge = challenge
     }
     
     /*

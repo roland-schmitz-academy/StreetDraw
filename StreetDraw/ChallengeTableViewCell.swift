@@ -38,15 +38,7 @@ class ChallengeTableViewCell: UITableViewCell {
             timeLimitCaption.alpha = 0.0
             timeLimitLabel.alpha = 0.0
         }
-        switch challenge.difficulty {
-        case .easy:
-            shapeBackgroundView.backgroundColor = .systemGreen
-        case .normal:
-            shapeBackgroundView.backgroundColor = .systemOrange
-        case .hard:
-            shapeBackgroundView.backgroundColor = .systemRed
-        }
-        
+        shapeBackgroundView.backgroundColor = challenge.difficulty.getColor()
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

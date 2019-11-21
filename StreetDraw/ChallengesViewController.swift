@@ -26,7 +26,7 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
         
         
     }
-
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("numberOfRowsInSection \(section) ?")
@@ -57,14 +57,27 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "starting" {
+            if let startGameViewController = segue.destination as? StartGameViewController {
+                print("selection: \(chaptersAndChallengesTableView.indexPathForSelectedRow)")
+                //                startGameViewController.challenge =
+                if let indexPath = chaptersAndChallengesTableView.indexPathForSelectedRow {
+                    let section = indexPath.section
+                    let row = indexPath.row
+                    if let chapter = streetDrawApp?.chapters[section] {
+                        let challenge = chapter.challenges[row]
+                        startGameViewController.prepareFor(chapter: chapter, challenge: challenge)
+                    }
+                }
+            }
+        }
+    }
     
 }

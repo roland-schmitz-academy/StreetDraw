@@ -20,6 +20,7 @@
 		FCBCF2AE2385FB030018A552 /* PlayGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */; };
 		FCBCF2B02385FFB60018A552 /* StartGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBCF2AF2385FFB60018A552 /* StartGame.storyboard */; };
 		FCBCF2B2238600000018A552 /* StartGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCF2B1238600000018A552 /* StartGameViewController.swift */; };
+		FCBCF2B42386AAEB0018A552 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCF2B32386AAEB0018A552 /* AppColors.swift */; };
 		FCD5AA952381F02F00738DCB /* Score.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA8E2381F02E00738DCB /* Score.storyboard */; };
 		FCD5AA962381F02F00738DCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA8F2381F02E00738DCB /* Main.storyboard */; };
 		FCD5AA972381F02F00738DCB /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCD5AA902381F02F00738DCB /* Settings.storyboard */; };
@@ -50,6 +51,7 @@
 		FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayGame.storyboard; sourceTree = "<group>"; };
 		FCBCF2AF2385FFB60018A552 /* StartGame.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StartGame.storyboard; sourceTree = "<group>"; };
 		FCBCF2B1238600000018A552 /* StartGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartGameViewController.swift; sourceTree = "<group>"; };
+		FCBCF2B32386AAEB0018A552 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		FCD5AA8E2381F02E00738DCB /* Score.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Score.storyboard; sourceTree = "<group>"; };
 		FCD5AA8F2381F02E00738DCB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FCD5AA902381F02F00738DCB /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				FCD5AAA423835B0400738DCB /* Stopwatch.swift */,
 				FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */,
 				FCBCF2AB2385F3B80018A552 /* RoundedButton.swift */,
+				FCBCF2B32386AAEB0018A552 /* AppColors.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */,
 				FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */,
 				FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */,
+				FCBCF2B42386AAEB0018A552 /* AppColors.swift in Sources */,
 				FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */,
 				FCBCF2B2238600000018A552 /* StartGameViewController.swift in Sources */,
 			);

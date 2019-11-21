@@ -11,17 +11,17 @@
         <scene sceneID="0nQ-Lj-JXa">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-8b7-eH-PRO" id="8b7-eH-PRO" customClass="StartGameViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="trl-Gh-IPA">
+                    <view key="view" contentMode="scaleToFill" id="trl-Gh-IPA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yru-4j-Uw6">
-                                <rect key="frame" x="0.0" y="44" width="414" height="615"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yru-4j-Uw6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="623"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="637" id="3r1-5o-7Tu"/>
                                 </constraints>
                             </mapView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-JZ-hqn">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-JZ-hqn">
                                 <rect key="frame" x="0.0" y="667" width="414" height="195"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gN-me-sH1" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
@@ -73,20 +73,39 @@
                                     <constraint firstAttribute="height" constant="195" id="GZK-zz-krd"/>
                                 </constraints>
                             </view>
+                            <view userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wny-Gd-69E" customClass="ShapeView" customModule="StreetDraw" customModuleProvider="target">
+                                <rect key="frame" x="87" y="144" width="240" height="240"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="1gB-ad-rhR"/>
+                                    <constraint firstAttribute="width" constant="240" id="cLJ-7S-iKY"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="yru-4j-Uw6" firstAttribute="leading" secondItem="uBT-1D-Xei" secondAttribute="leading" id="1G3-jc-e5w"/>
                             <constraint firstItem="yru-4j-Uw6" firstAttribute="top" secondItem="uBT-1D-Xei" secondAttribute="top" id="8nW-yt-hkg"/>
+                            <constraint firstItem="yru-4j-Uw6" firstAttribute="top" secondItem="Wny-Gd-69E" secondAttribute="top" constant="-100" id="ASq-E1-4wb"/>
                             <constraint firstItem="2T3-JZ-hqn" firstAttribute="top" secondItem="yru-4j-Uw6" secondAttribute="bottom" id="Die-Aw-NtP"/>
                             <constraint firstItem="yru-4j-Uw6" firstAttribute="trailing" secondItem="2T3-JZ-hqn" secondAttribute="trailing" id="Evi-0E-Hgb"/>
                             <constraint firstItem="yru-4j-Uw6" firstAttribute="centerX" secondItem="trl-Gh-IPA" secondAttribute="centerX" id="Faj-XB-eb3"/>
                             <constraint firstItem="yru-4j-Uw6" firstAttribute="leading" secondItem="2T3-JZ-hqn" secondAttribute="leading" id="OEE-cl-R5k"/>
                             <constraint firstItem="uBT-1D-Xei" firstAttribute="bottom" secondItem="2T3-JZ-hqn" secondAttribute="bottom" id="TMd-6u-gf5"/>
+                            <constraint firstItem="Wny-Gd-69E" firstAttribute="centerX" secondItem="yru-4j-Uw6" secondAttribute="centerX" id="j3a-It-ccR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uBT-1D-Xei"/>
                     </view>
                     <navigationItem key="navigationItem" id="WLx-Gt-Qv4"/>
+                    <connections>
+                        <outlet property="shapeView" destination="Wny-Gd-69E" id="uFL-3t-4g2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy2-ml-3do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
