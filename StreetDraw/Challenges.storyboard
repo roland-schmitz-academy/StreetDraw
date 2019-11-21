@@ -89,7 +89,7 @@
                                             <outlet property="shapeView" destination="mRX-5P-gSd" id="lvf-i9-uui"/>
                                             <outlet property="timeLimitCaption" destination="K5K-mP-IBM" id="qL1-pC-jiE"/>
                                             <outlet property="timeLimitLabel" destination="thc-1j-2dj" id="IIm-OB-h8a"/>
-                                            <segue destination="Nla-bb-stz" kind="show" id="UUp-D6-4iw"/>
+                                            <segue destination="Nla-bb-stz" kind="show" identifier="starting" id="UUp-D6-4iw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

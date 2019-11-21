@@ -10,7 +10,10 @@ import UIKit
 
 @IBDesignable
 class ShapeView: UIView {
-    
+
+    @IBInspectable
+    var lineWidth: CGFloat = 4.0
+
     var shape: Shape?
     
     override init(frame: CGRect) {
@@ -37,7 +40,7 @@ class ShapeView: UIView {
         var path: UIBezierPath!
         
         path = UIBezierPath()
-        path.lineWidth = 4.0
+        path.lineWidth = lineWidth
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
         tintColor.setStroke()
@@ -65,14 +68,14 @@ class ShapeView: UIView {
             }
             let sw = maxx - minx
             let sh = maxy - miny
-            let w2 = self.bounds.width - 4
-            let h2 = self.bounds.height - 4
+            let w2 = self.bounds.width - lineWidth
+            let h2 = self.bounds.height - lineWidth
             let scale1 = w2 / sw
             let scale2 = h2 / sh
             let scale = min(scale1, scale2)
             
-            let dx = 2 + (w2 - sw * scale) / 2.0
-            let dy = 2 + (h2 - sh * scale) / 2.0
+            let dx = (lineWidth + w2 - sw * scale) / 2.0
+            let dy = (lineWidth + h2 - sh * scale) / 2.0
             
             path.move(to: CGPoint(x: shape.points[0].x  * scale + dx, y: shape.points[0].y * scale + dy))
             
@@ -92,7 +95,7 @@ class ShapeView: UIView {
     }
     
     
-    func show(shape: Shape){
+    func show(shape: Shape?){
         self.shape = shape
         setNeedsDisplay()
     }
