@@ -11,17 +11,14 @@
         <scene sceneID="0nQ-Lj-JXa">
             <objects>
                 <viewController storyboardIdentifier="UIViewController-8b7-eH-PRO" id="8b7-eH-PRO" customClass="StartGameViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="trl-Gh-IPA">
+                    <view key="view" contentMode="scaleToFill" id="trl-Gh-IPA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yru-4j-Uw6">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="yru-4j-Uw6">
                                 <rect key="frame" x="0.0" y="44" width="414" height="623"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="637" id="3r1-5o-7Tu"/>
-                                </constraints>
                             </mapView>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-JZ-hqn">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2T3-JZ-hqn">
                                 <rect key="frame" x="0.0" y="667" width="414" height="195"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gN-me-sH1" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
@@ -104,6 +101,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WLx-Gt-Qv4"/>
                     <connections>
+                        <outlet property="mapView" destination="yru-4j-Uw6" id="I6f-92-C6V"/>
                         <outlet property="shapeView" destination="Wny-Gd-69E" id="uFL-3t-4g2"/>
                     </connections>
                 </viewController>

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
+class ChallengesViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var chaptersAndChallengesTableView: UITableView!
     

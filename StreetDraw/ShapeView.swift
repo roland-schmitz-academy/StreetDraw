@@ -35,8 +35,6 @@ class ShapeView: UIView {
      */
     
     override func draw(_ rect: CGRect) {
-        print("draw")
-        
         var path: UIBezierPath!
         
         path = UIBezierPath()
