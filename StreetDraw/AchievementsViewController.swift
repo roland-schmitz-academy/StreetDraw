@@ -10,13 +10,32 @@ import UIKit
 
 class AchievementsViewController: UILoggingViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return streetDrawApp?.achievements.results.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch section {
+        case 0: // Highscores
+            return streetDrawApp?.achievements.results.count ?? 0
+        case 1: // Medals todo
+            return 0 // todo
+        default:
+            return 0
+        }
         
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let section = indexPath.section
+        let row = indexPath.row
+        switch section {
+        case 0: // Highscores
+            let cell = tableView.dequeueReusableCell(withIdentifier: "GameResult", for: indexPath)
+            if let gameResultCell = cell as? GameResultTableViewCell,let gameResult = streetDrawApp?.achievements.results[row] {
+                gameResultCell.prepareFor(gameResult: gameResult)
+            }
+            return cell
+        default:
+            return UITableViewCell()
+        }
+    }
+
     @IBOutlet weak var scoresAndAccuracyTableView: UITableView!
     
     var streetDrawApp: StreetDrawApplication? {
@@ -27,6 +46,7 @@ class AchievementsViewController: UILoggingViewController, UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Achievements")
+        scoresAndAccuracyTableView.dataSource = self
         for gameResult in streetDrawApp?.achievements.results ?? [] {
             print("gameResult: \(gameResult.challenge.name) \(gameResult.score) \(gameResult.accuracy)")
         }

@@ -10,6 +10,9 @@ import UIKit
 
 class GameResultTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var scoreLabel: UILabel!
+    var gameResult: GameResult?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,8 @@ class GameResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func prepareFor(gameResult: GameResult) {
+        self.gameResult = gameResult
+        scoreLabel.text = "\(gameResult.score)"
+    }
 }
