@@ -92,6 +92,7 @@
 			children = (
 				4CC467292385A34000CC3B49 /* app-icons */,
 				FC5B05942381B02C0095A43B /* Assets.xcassets */,
+				FC5B05992381B02C0095A43B /* Info.plist */,
 				FC5B058B2381B02B0095A43B /* AppDelegate.swift */,
 				FC5B058D2381B02B0095A43B /* SceneDelegate.swift */,
 				FCD5AA912381F02F00738DCB /* LaunchScreen.storyboard */,
@@ -109,7 +110,6 @@
 				FCD5AA902381F02F00738DCB /* Settings.storyboard */,
 				FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */,
 				FCBCF2A9238525E00018A552 /* ShapeView.swift */,
-				FC5B05992381B02C0095A43B /* Info.plist */,
 				FCD5AA9E23830B6A00738DCB /* DataModel.swift */,
 				FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */,
 				FCD5AAA423835B0400738DCB /* Stopwatch.swift */,
