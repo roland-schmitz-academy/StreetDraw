@@ -8,7 +8,15 @@
 
 import UIKit
 
-class AchievementsViewController: UILoggingViewController {
+class AchievementsViewController: UILoggingViewController, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return streetDrawApp?.achievements.results.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    }
+    
     @IBOutlet weak var scoresAndAccuracyTableView: UITableView!
     
     var streetDrawApp: StreetDrawApplication? {
@@ -18,13 +26,22 @@ class AchievementsViewController: UILoggingViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        for achievement in streetDrawApp?.achievements.results {
-//            
-//        }
+        print("Achievements")
+        for gameResult in streetDrawApp?.achievements.results ?? [] {
+            print("gameResult: \(gameResult.challenge.name) \(gameResult.score) \(gameResult.accuracy)")
+        }
         print("AchievementsViewController.viewDidLoad()")
         // Do any additional setup after loading the view.
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        print("numberOfSections() ?")
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        "HIGHSCORES"
+    }
 
     /*
     // MARK: - Navigation

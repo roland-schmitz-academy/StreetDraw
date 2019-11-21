@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C5AFDF023870F0F00A9BC1C /* GameResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */; };
 		4CC4672A2385A34000CC3B49 /* app-icons in Resources */ = {isa = PBXBuildFile; fileRef = 4CC467292385A34000CC3B49 /* app-icons */; };
 		FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058B2381B02B0095A43B /* AppDelegate.swift */; };
 		FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058D2381B02B0095A43B /* SceneDelegate.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewCell.swift; sourceTree = "<group>"; };
 		4CC467292385A34000CC3B49 /* app-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "app-icons"; sourceTree = "<group>"; };
 		FC5B05882381B02B0095A43B /* StreetDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5B058B2381B02B0095A43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */,
 				FCD5AA942381F02F00738DCB /* Achievements.storyboard */,
 				FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */,
+				4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */,
 				FCD5AA8E2381F02E00738DCB /* Score.storyboard */,
 				FC5B05D52381E7030095A43B /* ScoreViewController.swift */,
 				FCD5AA902381F02F00738DCB /* Settings.storyboard */,
@@ -218,6 +221,7 @@
 				FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */,
 				FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */,
 				FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */,
+				4C5AFDF023870F0F00A9BC1C /* GameResultTableViewCell.swift in Sources */,
 				FCBCF2B42386AAEB0018A552 /* AppColors.swift in Sources */,
 				FCD5AA9F23830B6A00738DCB /* DataModel.swift in Sources */,
 				FCBCF2B2238600000018A552 /* StartGameViewController.swift in Sources */,

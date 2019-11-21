@@ -46,7 +46,7 @@ struct Game {
     let stopwatch = Stopwatch()
 }
 
-struct Achievement {
+struct GameResult {
     let chapter: Chapter
     let challenge: Challenge
     let track: Track
@@ -55,15 +55,17 @@ struct Achievement {
 }
 
 struct Achievements {
-    let results: [Achievement]
+    let results: [GameResult]
 }
 
 class StreetDrawApplication {
     let chapters: [Chapter]
-    let achievements = Achievements(results: [])
+    let achievements: Achievements
     let currentGame: Game? = nil
     init(chapters: [Chapter]) {
         self.chapters = chapters
+        // only for testing:
+        self.achievements = Achievements(results: [GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), accuracy: 0.78, score: 12435), GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), accuracy: 0.11, score: 12312312)])
     }
 }
 
