@@ -10,8 +10,15 @@ import UIKit
 
 class GameResultTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var scoreLabel: UILabel!
     var gameResult: GameResult?
+//    var chapter: Chapter?
+//    var challenge: Challenge?
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var accuracyLabel: UILabel!
+    @IBOutlet weak var shapeBackgroundView: UIView!
+    @IBOutlet weak var shapeView: ShapeView!
+    @IBOutlet weak var challengeNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +33,10 @@ class GameResultTableViewCell: UITableViewCell {
 
     func prepareFor(gameResult: GameResult) {
         self.gameResult = gameResult
+//        self.chapter = gameResult.chapter
+//        self.challenge = gameResult.challenge
+        challengeNameLabel.text = "\(gameResult.challenge)"
         scoreLabel.text = "\(gameResult.score)"
+        accuracyLabel.text = "\(gameResult.accuracy)"
     }
 }
