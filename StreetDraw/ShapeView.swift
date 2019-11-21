@@ -13,8 +13,6 @@ class ShapeView: UIView {
     
     var shape: Shape?
     
-    var path: UIBezierPath!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -36,24 +34,19 @@ class ShapeView: UIView {
     override func draw(_ rect: CGRect) {
         print("draw")
         
+        var path: UIBezierPath!
+        
         path = UIBezierPath()
         path.lineWidth = 4.0
         path.lineCapStyle = .round
         path.lineJoinStyle = .round
         tintColor.setStroke()
         
-        
         if let shape = shape, shape.points.count > 1 {//if we can draw the shape
             
             var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
             var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
-            
-            
-
-            print("draw with shape")
-            
-            
-            
+        
 //            Calculate the constraints to draw the shapes
             for point in shape.points.dropFirst() {
                 if (point.x < minx){
@@ -101,11 +94,8 @@ class ShapeView: UIView {
     
     func show(shape: Shape){
         self.shape = shape
+        setNeedsDisplay()
     }
-    
-    
-    
-    
     
 }
 
