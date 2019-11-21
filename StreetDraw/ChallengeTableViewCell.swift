@@ -29,7 +29,7 @@ class ChallengeTableViewCell: UITableViewCell {
         self.challenge = challenge
         nameLabel.text = challenge.name
         shapeView.show(shape: challenge.shape)
-        minDistanceLabel.text = challenge.minDistance.description
+        minDistanceLabel.text = "\(challenge.minDistance) km" 
         if let maxDuration = challenge.maxDuration {
             timeLimitLabel.text = maxDuration.description
             timeLimitCaption.alpha = 1.0
