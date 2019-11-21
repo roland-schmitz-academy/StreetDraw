@@ -43,15 +43,48 @@ class ShapeView: UIView {
         tintColor.setStroke()
         
         
-        if let shape = shape, shape.points.count > 1 {
-            let scale: CGFloat = 20.0
+        if let shape = shape, shape.points.count > 1 {//if we can draw the shape
+            
+            var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
+            var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
+            
+            
 
             print("draw with shape")
             
-            path.move(to: CGPoint(x: shape.points[0].x  * scale + 2, y: shape.points[0].y * scale + 2))
+            
+            
+//            Calculate the constraints to draw the shapes
+            for point in shape.points.dropFirst() {
+                if (point.x < minx){
+                    minx = point.x
+                }
+                if (point.y < miny) {
+                    miny = point.y
+                }
+                if (point.x > maxx){
+                    maxx = point.x
+                }
+                if (point.y > maxy) {
+                    maxy = point.y
+                }
+                
+            }
+            let sw = maxx - minx
+            let sh = maxy - miny
+            let w2 = self.bounds.width - 4
+            let h2 = self.bounds.height - 4
+            let scale1 = w2 / sw
+            let scale2 = h2 / sh
+            let scale = min(scale1, scale2)
+            
+            let dx = 2 + (w2 - sw * scale) / 2.0
+            let dy = 2 + (h2 - sh * scale) / 2.0
+            
+            path.move(to: CGPoint(x: shape.points[0].x  * scale + dx, y: shape.points[0].y * scale + dy))
             
             for point in shape.points.dropFirst() {
-                path.addLine(to: CGPoint(x: point.x  * scale + 2, y: point.y * scale + 2))
+                path.addLine(to: CGPoint(x: point.x  * scale + dx, y: point.y * scale + dy))
             }
             path.stroke()
 
