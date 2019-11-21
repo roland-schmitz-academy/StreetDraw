@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
+
 
 class StartGameViewController: UILoggingViewController {
 
     var chapter: Chapter?
     var challenge: Challenge?
-    
+    let locationManager = (UIApplication.shared.delegate as? AppDelegate)?.locationManager
+
     @IBOutlet weak var shapeView: ShapeView!
     
     override func viewDidLoad() {
@@ -22,9 +25,23 @@ class StartGameViewController: UILoggingViewController {
         shapeView.tintColor = challenge?.difficulty.getColor()
         shapeView.show(shape: challenge?.shape)
 
-        // Do any additional setup after loading the view.
+        
+        
     }
-    
+
+    func checkLocationAuthorizationStatus() {
+        print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
+        locationManager?.requestWhenInUseAuthorization()
+        print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
+
+        //      if CLLocationManager.authorizationStatus() == .authorizedAlways {
+//        mapView.showsUserLocation = true
+//      } else {
+//        locationManager.requestWhenInUseAuthorization()
+//      }
+    }
+
+
     func prepareFor(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
         self.challenge = challenge

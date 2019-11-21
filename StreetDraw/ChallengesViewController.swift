@@ -20,21 +20,14 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersAndChallengesTableView.dataSource = self
-        print("ChallengesViewController.viewDidLoad()")
-        print("streetDrawApp: \(String(describing: streetDrawApp?.chapters))")
-        
-        
-        
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("numberOfRowsInSection \(section) ?")
         return streetDrawApp?.chapters[section].challenges.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("cellForRowAt \(indexPath) ?")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChallengeCell", for: indexPath)
         if let challengeCell = cell as? ChallengeTableViewCell {
             let section = indexPath.section
@@ -48,7 +41,6 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        print("numberOfSections() ?")
         return streetDrawApp?.chapters.count ?? 0
     }
     
@@ -66,8 +58,6 @@ class ChallengesViewController: UILoggingViewController, UITableViewDataSource {
         
         if segue.identifier == "starting" {
             if let startGameViewController = segue.destination as? StartGameViewController {
-                print("selection: \(chaptersAndChallengesTableView.indexPathForSelectedRow)")
-                //                startGameViewController.challenge =
                 if let indexPath = chaptersAndChallengesTableView.indexPathForSelectedRow {
                     let section = indexPath.section
                     let row = indexPath.row
