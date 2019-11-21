@@ -25,7 +25,6 @@ func createStreetDrawApplication() -> StreetDrawApplication {
         CGPoint(x: 0,y: 0)
     ])
     
-    
     // todo: define more shapes
     
     return StreetDrawApplication(chapters: [
@@ -39,13 +38,19 @@ func createStreetDrawApplication() -> StreetDrawApplication {
         
         
         Chapter(name: "Introduction", challenges: [
-            Challenge(name: "Small Square", shape: square, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 100.0, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Small Square", shape: square, minDistance: 0.1 , maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 0.1, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
         ]),
         Chapter(name: "Warmup", challenges: [
-            Challenge(name: "Square", shape: square, minDistance: 1000.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Rectangle", shape: rectangle, minDistance: 1000.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Square", shape: square, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rectangle", shape: rectangle, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
         ]),
+        
+        Chapter(name: "Get ready", challenges: [
+            Challenge(name: "Square", shape: square, minDistance: 0.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rectangle", shape: rectangle, minDistance: 1.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
+        ]),
+        
         Chapter(name: "Engaging", challenges: [
             // todo
         ]),
