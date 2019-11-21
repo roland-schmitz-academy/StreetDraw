@@ -9,9 +9,18 @@
 import UIKit
 
 class AchievementsViewController: UILoggingViewController {
-
+    @IBOutlet weak var scoresAndAccuracyTableView: UITableView!
+    
+    var streetDrawApp: StreetDrawApplication? {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.streetDrawApp
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+//        for achievement in streetDrawApp?.achievements.results {
+//            
+//        }
         print("AchievementsViewController.viewDidLoad()")
         // Do any additional setup after loading the view.
     }
