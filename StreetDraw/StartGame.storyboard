@@ -38,14 +38,14 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3,1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-Gh-7r9">
-                                        <rect key="frame" x="60" y="38" width="76" height="29"/>
+                                        <rect key="frame" x="60" y="38" width="169" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-Yx-dPU">
-                                        <rect key="frame" x="60" y="72" width="105" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minimum distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYB-Yx-dPU">
+                                        <rect key="frame" x="60" y="72" width="103" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -58,8 +58,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timelimit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJo-sR-SvM">
-                                        <rect key="frame" x="237" y="72" width="52" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time limit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJo-sR-SvM">
+                                        <rect key="frame" x="237" y="72" width="55" height="15"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
@@ -102,7 +102,11 @@
                     <navigationItem key="navigationItem" id="WLx-Gt-Qv4"/>
                     <connections>
                         <outlet property="mapView" destination="yru-4j-Uw6" id="I6f-92-C6V"/>
+                        <outlet property="minDistanceCaption" destination="oYB-Yx-dPU" id="8ca-Nz-vEQ"/>
+                        <outlet property="minDistanceLabel" destination="BCE-Gh-7r9" id="ZJz-9N-fFo"/>
                         <outlet property="shapeView" destination="Wny-Gd-69E" id="uFL-3t-4g2"/>
+                        <outlet property="timeLimitCaption" destination="MJo-sR-SvM" id="ONx-BH-hrr"/>
+                        <outlet property="timeLimitLabel" destination="uLn-EW-s3m" id="ll2-5v-9Pg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gy2-ml-3do" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

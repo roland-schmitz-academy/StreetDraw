@@ -18,6 +18,10 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shapeView: ShapeView!
+    @IBOutlet weak var minDistanceLabel: UILabel!
+    @IBOutlet weak var timeLimitLabel: UILabel!
+    @IBOutlet weak var timeLimitCaption: UILabel!
+    @IBOutlet weak var minDistanceCaption: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +37,7 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     func updateValues() {
         shapeView.tintColor = challenge?.difficulty.getColor()
         shapeView.show(shape: challenge?.shape)
+        minDistanceLabel.text = "\(challenge!.minDistance) km"
         // todo change distance and timeLimit
     }
     
