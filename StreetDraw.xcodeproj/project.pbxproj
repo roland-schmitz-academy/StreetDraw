@@ -44,7 +44,7 @@
 		4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewCell.swift; sourceTree = "<group>"; };
 		4CC467292385A34000CC3B49 /* app-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "app-icons"; sourceTree = "<group>"; };
 		54C76DBF23881615008F96CD /* PersisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersisData.swift; sourceTree = "<group>"; };
-		FC5B05882381B02B0095A43B /* StreetDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC5B05882381B02B0095A43B /* Walk'n'Draw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Walk'n'Draw.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5B058B2381B02B0095A43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5B058D2381B02B0095A43B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FC5B05942381B02C0095A43B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 		FC5B05892381B02B0095A43B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC5B05882381B02B0095A43B /* StreetDraw.app */,
+				FC5B05882381B02B0095A43B /* Walk'n'Draw.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 			);
 			name = StreetDraw;
 			productName = StreetDraw;
-			productReference = FC5B05882381B02B0095A43B /* StreetDraw.app */;
+			productReference = FC5B05882381B02B0095A43B /* Walk'n'Draw.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -369,7 +369,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de2rs.StreetDrawPM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Walk'n'Draw";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -387,7 +387,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = de2rs.StreetDrawPM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Walk'n'Draw";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
