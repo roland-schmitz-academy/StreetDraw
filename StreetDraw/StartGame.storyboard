@@ -34,7 +34,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="20C-Qr-D9I" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="JZy-N8-aKk"/>
+                                            <segue destination="20C-Qr-D9I" kind="presentation" identifier="playing" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="JZy-N8-aKk"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3,1 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BCE-Gh-7r9">
