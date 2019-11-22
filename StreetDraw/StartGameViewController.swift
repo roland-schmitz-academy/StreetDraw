@@ -38,6 +38,17 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
         shapeView.tintColor = challenge?.difficulty.getColor()
         shapeView.show(shape: challenge?.shape)
         minDistanceLabel.text = "\(challenge!.minDistance) km"
+        if let maxDuration = challenge?.maxDuration {
+            timeLimitLabel.text = timeToString(from: maxDuration)
+        } else {
+            timeLimitLabel.text = ""
+            
+        }
+//        timeLimitLabel.text = timeToString(from: <#T##TimeInterval#>)
+//        timeLimitLabel.text = "\(timeToString(from: challenge!.maxDuration))"
+//        timeLimitLabel.text = !(challenge!.maxDuration!)? (timeToString(from: challenge!.maxDuration!)) : " "
+        
+        
         // todo change distance and timeLimit
     }
     
