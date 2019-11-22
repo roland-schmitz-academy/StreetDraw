@@ -109,8 +109,8 @@
 				FCD5AA8F2381F02E00738DCB /* Main.storyboard */,
 				FCD5AA9C2381FAA500738DCB /* MainTabBarController.swift */,
 				FCD5AA922381F02F00738DCB /* Challenges.storyboard */,
-				FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */,
 				FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */,
+				FC5B05D12381E68C0095A43B /* ChallengesViewController.swift */,
 				FCBCF2AF2385FFB60018A552 /* StartGame.storyboard */,
 				FCBCF2B1238600000018A552 /* StartGameViewController.swift */,
 				FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */,
@@ -354,7 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BQMNX4C29K;
+				DEVELOPMENT_TEAM = VBDPB3U9JA;
 				INFOPLIST_FILE = StreetDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -372,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EE29XD2KE9;
+				DEVELOPMENT_TEAM = VBDPB3U9JA;
 				INFOPLIST_FILE = StreetDraw/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

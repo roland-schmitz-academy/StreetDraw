@@ -10,10 +10,10 @@ import UIKit
 
 @IBDesignable
 class ShapeView: UIView {
-
+    
     @IBInspectable
     var lineWidth: CGFloat = 4.0
-
+    
     var shape: Shape?
     
     override init(frame: CGRect) {
@@ -36,6 +36,7 @@ class ShapeView: UIView {
     
     override func draw(_ rect: CGRect) {
         var path: UIBezierPath!
+        getDrawingPoints()
         
         path = UIBezierPath()
         path.lineWidth = lineWidth
@@ -47,8 +48,8 @@ class ShapeView: UIView {
             
             var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
             var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
-        
-//            Calculate the constraints to draw the shapes
+            
+            //            Calculate the constraints to draw the shapes
             for point in shape.points.dropFirst() {
                 if (point.x < minx){
                     minx = point.x
@@ -81,7 +82,7 @@ class ShapeView: UIView {
                 path.addLine(to: CGPoint(x: point.x  * scale + dx, y: point.y * scale + dy))
             }
             path.stroke()
-
+            
         } else {
             // Draw a cross in case we dont have a shape
             path.move(to: CGPoint(x: 0.0 , y: 0.0))
@@ -92,9 +93,60 @@ class ShapeView: UIView {
         }
     }
     
+    
+    
+    
     func getDrawingPoints() -> [CGPoint] {
-        return []
+        
+        var drawingPoints: [CGPoint] = []
+        
+        if let shape = shape, shape.points.count > 1 {
+            
+            var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
+            var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
+            
+            //            Calculate the constraints to draw the shapes
+            for point in shape.points.dropFirst() {
+                if (point.x < minx){
+                    minx = point.x
+                }
+                if (point.y < miny) {
+                    miny = point.y
+                }
+                if (point.x > maxx){
+                    maxx = point.x
+                }
+                if (point.y > maxy) {
+                    maxy = point.y
+                }
+                
+            }
+            let sw = maxx - minx
+            let sh = maxy - miny
+            let w2 = self.bounds.width - lineWidth
+            let h2 = self.bounds.height - lineWidth
+            let scale1 = w2 / sw
+            let scale2 = h2 / sh
+            let scale = min(scale1, scale2)
+            
+            let dx = (lineWidth + w2 - sw * scale) / 2.0
+            let dy = (lineWidth + h2 - sh * scale) / 2.0
+            
+            
+            
+            for point in shape.points {
+                drawingPoints.append(CGPoint(x: point.x * scale + dx,y: point.y * scale + dy))
+                
+            }
+            
+            print("converted: \(drawingPoints)")
+            
+        }
+        return drawingPoints
     }
+    
+    
+    
     
     func show(shape: Shape?){
         self.shape = shape
