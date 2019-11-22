@@ -234,7 +234,7 @@ func createStreetDrawApplication() -> StreetDrawApplication {
 //
         
         Chapter(name: "Introduction", challenges: [
-            Challenge(name: "Small Square", shape: square, minDistance: 0.1 , maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Small Square", shape: square, minDistance: 0.1 , maxDuration: 600, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
             Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 0.1, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
         ]),
         Chapter(name: "Warmup", challenges: [

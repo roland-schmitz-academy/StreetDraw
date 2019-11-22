@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C41D07F2388002A006E9682 /* timeToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41D07E2388002A006E9682 /* timeToString.swift */; };
 		4C5AFDF023870F0F00A9BC1C /* GameResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */; };
 		4CC4672A2385A34000CC3B49 /* app-icons in Resources */ = {isa = PBXBuildFile; fileRef = 4CC467292385A34000CC3B49 /* app-icons */; };
 		FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058B2381B02B0095A43B /* AppDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C41D07E2388002A006E9682 /* timeToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeToString.swift; sourceTree = "<group>"; };
 		4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewCell.swift; sourceTree = "<group>"; };
 		4CC467292385A34000CC3B49 /* app-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "app-icons"; sourceTree = "<group>"; };
 		FC5B05882381B02B0095A43B /* StreetDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */,
 				FCBCF2AB2385F3B80018A552 /* RoundedButton.swift */,
 				FCBCF2B32386AAEB0018A552 /* AppColors.swift */,
+				4C41D07E2388002A006E9682 /* timeToString.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */,
 				FCBCF2AC2385F3B80018A552 /* RoundedButton.swift in Sources */,
 				FCBCF2B6238746390018A552 /* PlayGameViewController.swift in Sources */,
+				4C41D07F2388002A006E9682 /* timeToString.swift in Sources */,
 				FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */,
 				FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */,
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,

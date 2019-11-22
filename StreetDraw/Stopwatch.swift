@@ -1,4 +1,3 @@
-//
 //  Stopwatch.swift
 //  StreetDraw
 //
@@ -8,31 +7,46 @@
 
 import Foundation
 
+var startingTime:TimeInterval = 0.0
+var stopingTime : TimeInterval = 0.0
+var lastPauseTime: TimeInterval = 0.0
+var totalPauseTime : TimeInterval = 0.0
+
+
 class Stopwatch {
     func start() {
         // todo
+        startingTime = Date().timeIntervalSince1970
+        
     }
     
     func stop() {
-        // todo
+        stopingTime = Date().timeIntervalSince1970
     }
     
     func pause() {
         // todo
+        lastPauseTime = Date().timeIntervalSince1970
+        
+        
+        
+        
     }
     
     func `continue`() {
-        // todo
+        totalPauseTime += Date().timeIntervalSince1970 - lastPauseTime
+        lastPauseTime = 0.0
     }
     
     var overallDuration: TimeInterval {
         // todo
-        return 15.5
+         return stopingTime - startingTime
+        
     }
 
     var activeDuration: TimeInterval {
-        // todo
-        return 12.5
+        
+        return overallDuration-totalPauseTime
     }
 
 }
