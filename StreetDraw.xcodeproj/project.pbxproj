@@ -10,6 +10,7 @@
 		4C41D07F2388002A006E9682 /* timeToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41D07E2388002A006E9682 /* timeToString.swift */; };
 		4C5AFDF023870F0F00A9BC1C /* GameResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */; };
 		4CC4672A2385A34000CC3B49 /* app-icons in Resources */ = {isa = PBXBuildFile; fileRef = 4CC467292385A34000CC3B49 /* app-icons */; };
+		54C76DBE23880C17008F96CD /* interactionWithPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C76DBD23880C17008F96CD /* interactionWithPlist.swift */; };
 		FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058B2381B02B0095A43B /* AppDelegate.swift */; };
 		FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B058D2381B02B0095A43B /* SceneDelegate.swift */; };
 		FC5B05952381B02C0095A43B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC5B05942381B02C0095A43B /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		4C41D07E2388002A006E9682 /* timeToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeToString.swift; sourceTree = "<group>"; };
 		4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewCell.swift; sourceTree = "<group>"; };
 		4CC467292385A34000CC3B49 /* app-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "app-icons"; sourceTree = "<group>"; };
+		54C76DBD23880C17008F96CD /* interactionWithPlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = interactionWithPlist.swift; sourceTree = "<group>"; };
 		FC5B05882381B02B0095A43B /* StreetDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreetDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC5B058B2381B02B0095A43B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC5B058D2381B02B0095A43B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */,
 				FCBCF2A9238525E00018A552 /* ShapeView.swift */,
 				FCD5AA9E23830B6A00738DCB /* DataModel.swift */,
+				54C76DBD23880C17008F96CD /* interactionWithPlist.swift */,
 				FCD5AAA2238352F300738DCB /* StreetDrawApplicationFactory.swift */,
 				FCD5AAA423835B0400738DCB /* Stopwatch.swift */,
 				FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */,
@@ -223,6 +226,7 @@
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,
 				FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */,
 				FCBCF2AA238525E00018A552 /* ShapeView.swift in Sources */,
+				54C76DBE23880C17008F96CD /* interactionWithPlist.swift in Sources */,
 				FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */,
 				FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */,
 				FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */,
