@@ -75,8 +75,8 @@ class StreetDrawApplication {
         self.achievements = Achievements(results: [
             GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), accuracy: 0.78, score: 12435),
             GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), accuracy: 0.11, score: 12312),
-            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[1], track: Track(), accuracy: 0.56, score: 53836),
-            GameResult(chapter: chapters[4], challenge: chapters[4].challenges[2], track: Track(), accuracy: 0.87, score: 36)
+            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[0], track: Track(), accuracy: 0.56, score: 53836),
+            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[1], track: Track(), accuracy: 0.87, score: 36)
         ])
     }
 }
