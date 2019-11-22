@@ -18,7 +18,11 @@ enum Difficulty {
     case easy, normal, hard
 }
 
-struct Challenge {
+struct Challenge: Equatable {
+    static func == (lhs: Challenge, rhs: Challenge) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     let name: String
     let shape: Shape
     // Distance in kilometers
@@ -30,7 +34,10 @@ struct Challenge {
     let difficulty: Difficulty
 }
 
-struct Chapter {
+struct Chapter: Equatable {
+    static func == (lhs: Chapter, rhs: Chapter) -> Bool {
+        return lhs.name == rhs.name
+    }
     let name: String
     let challenges: [Challenge]
 }
@@ -69,6 +76,26 @@ class StreetDrawApplication {
     }
 }
 
-
+extension StreetDrawApplication {
+    func getNextChapterAndChallenge(chapter: Chapter, challenge: Challenge) -> (Chapter, Challenge) {
+        // todo search for the next challenge in the chapter or the first chapter in the next chapter
+        // structs are not always the best structures, todo: refactor chapters an challenges
+        let challengesIndex = chapter.challenges.firstIndex(where: {$0 == challenge})!
+        if challengesIndex < chapter.challenges.count - 1 {
+            print("next challenge")
+            return (chapter, chapter.challenges[challengesIndex + 1])
+        }
+        let chapterIndex = chapters.firstIndex(where: {$0 == chapter})!
+        if chapterIndex < chapters.count - 1 {
+            let nextChapter = chapters[chapterIndex + 1]
+            if nextChapter.challenges.count > 0 {
+                print("next chapter")
+                return (nextChapter, nextChapter.challenges[0])
+            }
+        }
+        // no next chapter found, so use the same again
+        return (chapter, challenge)
+    }
+}
 
 

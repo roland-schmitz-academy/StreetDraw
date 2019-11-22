@@ -21,18 +21,33 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        shapeView.tintColor = challenge?.difficulty.getColor()
-        shapeView.show(shape: challenge?.shape)
         locationManager?.delegate = self
         self.mapView.delegate = self
-        checkLocationAuthorizationStatus()
-        mapView.showsUserLocation = true
-        
+        setupUserTrackingButton()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        updateValues()
+    }
+
+    func updateValues() {
+        shapeView.tintColor = challenge?.difficulty.getColor()
+        shapeView.show(shape: challenge?.shape)
+        // todo change distance and timeLimit
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("StartGameViewController viewDidAppear")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.startGameViewController = self
+    }
+    
+    var askedForLocationAccess = false
+    
     func checkLocationAuthorizationStatus() {
+        guard !askedForLocationAccess else { return }
         print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
-        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.requestAlwaysAuthorization()
         print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
 
 //      if CLLocationManager.authorizationStatus() == .authorizedAlways {
@@ -42,21 +57,31 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
 //      }
     }
 
+    func setupUserTrackingButton() {
+        let button = MKUserTrackingButton(mapView: mapView)
+        button.layer.backgroundColor = UIColor(white: 1, alpha: 0.7).cgColor
+        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 4
+        button.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(button)
+
+        NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10),
+                                     button.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10)])
+    }
+
+    func mapViewWillStartLocatingUser(_ mapView: MKMapView) {
+        checkLocationAuthorizationStatus()
+    }
 
     func prepareFor(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
         self.challenge = challenge
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        checkLocationAuthorizationStatus()
     }
-    */
 
 }
 

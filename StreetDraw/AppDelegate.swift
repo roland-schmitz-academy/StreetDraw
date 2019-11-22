@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var streetDrawApp: StreetDrawApplication?
     var locationManager: CLLocationManager?
+    var challengesViewController: ChallengesViewController?
+    var startGameViewController: StartGameViewController?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

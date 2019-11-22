@@ -61,5 +61,9 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Needed to display your location on the map and to draw on the map.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>needed</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>always</string>
 </dict>
 </plist>

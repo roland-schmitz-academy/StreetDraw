@@ -22,6 +22,15 @@ class ChallengesViewController: UIViewController, UITableViewDataSource {
         chaptersAndChallengesTableView.dataSource = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        print("challenges viewDidAppear")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.challengesViewController = self
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("challenges viewDidDisappear")
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return streetDrawApp?.chapters[section].challenges.count ?? 0
