@@ -16,22 +16,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanch-icon" translatesAutoresizingMaskIntoConstraints="NO" id="mcp-Vz-rxF">
-                                <rect key="frame" x="127" y="368" width="160" height="160"/>
+                                <rect key="frame" x="107" y="311" width="218" height="218"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="StreetDraw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-T1-9fQ">
-                                <rect key="frame" x="93" y="536" width="228" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Walk'n'Draw" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTh-T1-9fQ">
+                                <rect key="frame" x="106" y="527" width="191" height="40"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="46"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
                                 <color key="textColor" red="0.36854210500000001" green="0.69004964830000004" blue="0.325414598" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="FpF-NZ-FlU"/>
-                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="top" secondItem="mcp-Vz-rxF" secondAttribute="bottom" constant="8" id="NSU-90-IS9"/>
-                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerX" secondItem="BTh-T1-9fQ" secondAttribute="centerX" id="OaS-w5-N32"/>
-                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gWI-xX-DZo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="BTh-T1-9fQ" secondAttribute="bottom" constant="295" id="3a5-Nt-Rya"/>
+                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="107" id="5Jv-4g-pah"/>
+                            <constraint firstItem="mcp-Vz-rxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="267" id="6YU-aF-22i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BTh-T1-9fQ" secondAttribute="trailing" constant="117" id="Ayq-jf-BdO"/>
+                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="483" id="iRq-pv-cYU"/>
+                            <constraint firstItem="BTh-T1-9fQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="106" id="iSO-OP-vzS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mcp-Vz-rxF" secondAttribute="trailing" constant="89" id="lmG-BA-Lko"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mcp-Vz-rxF" secondAttribute="bottom" constant="333" id="p79-O7-nN1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -42,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="lanch-icon" width="160" height="160"/>
+        <image name="lanch-icon" width="1024" height="1024"/>
     </resources>
 </document>
