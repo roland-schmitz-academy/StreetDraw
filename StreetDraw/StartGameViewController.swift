@@ -40,9 +40,10 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
         minDistanceLabel.text = "\(challenge!.minDistance) km"
         if let maxDuration = challenge?.maxDuration {
             timeLimitLabel.text = timeToString(from: maxDuration)
+            timeLimitCaption.alpha = 1
         } else {
             timeLimitLabel.text = ""
-            
+            timeLimitCaption.alpha = 0
         }
 //        timeLimitLabel.text = timeToString(from: <#T##TimeInterval#>)
 //        timeLimitLabel.text = "\(timeToString(from: challenge!.maxDuration))"
