@@ -9,7 +9,11 @@
 import UIKit
 import MapKit
 
-class PlayGameViewController: UIViewController {
+class PlayGameViewController: UIViewController, MKMapViewDelegate {
+    var chapter: Chapter?
+    var challenge: Challenge?
+    var shapeOverlay: MKOverlay?
+    
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var stopButton: RoundedButton!
     @IBOutlet weak var resumeButton: RoundedButton!
@@ -23,14 +27,20 @@ class PlayGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //mapView.
+        mapView.delegate = self
         setupUserTrackingButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = .follow
+        //mapView.userTrackingMode = .follow
         updateButtons()
+        if let shapeOverlay = shapeOverlay {
+            mapView.addOverlay(shapeOverlay)
+            let bounds = shapeOverlay.boundingMapRect
+            mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
+
+        }
     }
     
     func setupUserTrackingButton() {
@@ -46,6 +56,21 @@ class PlayGameViewController: UIViewController {
                                      button.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10)])
     }
 
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        print("render!")
+        let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+        if overlay === self.shapeOverlay {
+            renderer.strokeColor = .systemGray // challenge?.difficulty.getColor()
+            renderer.alpha = 0.4
+        } else {
+            renderer.strokeColor = .systemBlue
+            renderer.alpha = 0.8
+        }
+        renderer.lineWidth = 10
+        return renderer
+
+    }
+    
     func updateButtons() {
         // show only the right buttons
         UIView.animate(withDuration: 0.2) { [unowned self]  in
@@ -66,4 +91,9 @@ class PlayGameViewController: UIViewController {
         
     }
     
+    func prepareForChallenge(chapter: Chapter?, challenge: Challenge?, shapeOverlay: MKOverlay) {
+        self.chapter = chapter
+        self.challenge = challenge
+        self.shapeOverlay = shapeOverlay
+    }
 }

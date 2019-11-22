@@ -97,8 +97,41 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        checkLocationAuthorizationStatus()
+        if segue.identifier == "playing" {
+            checkLocationAuthorizationStatus()
+        
+            let overlay = getShapeOverlay()
+            print("overlay is : \((overlay as! MKPolyline).points())")
+            if let playGameViewController = segue.destination as? PlayGameViewController {
+                playGameViewController.prepareForChallenge(chapter: chapter, challenge: challenge, shapeOverlay: overlay)
+            }
+            if (segue.destination as? PlayGameViewController) != nil {
+                
+            }
+        }
+    }
+
+    
+    func getShapeOverlay() -> MKOverlay {
+        let points = shapeView.getDrawingPoints()
+        let geoPoints = convertToGeoPoints(points: points, toCoordinateFrom: shapeView)
+        print("geoPoints is : \(geoPoints)")
+        let polyline = MKPolyline(coordinates: geoPoints, count: geoPoints.count)
+        return polyline
+        
+    }
+    func convertToGeoPoints(points: [CGPoint], toCoordinateFrom view : UIView) -> [CLLocationCoordinate2D] {
+        
+        var coordinates: [CLLocationCoordinate2D] = []
+        
+        for point in points {
+            let coordinate = mapView.convert(point, toCoordinateFrom: view)
+            print("Point is Geolocated : \(coordinate)")
+            coordinates += [coordinate]
+        }
+        return coordinates
     }
 
 }
+
 

@@ -36,7 +36,7 @@ class ShapeView: UIView {
     
     override func draw(_ rect: CGRect) {
         var path: UIBezierPath!
-        getDrawingPoints()
+       
         
         path = UIBezierPath()
         path.lineWidth = lineWidth
@@ -142,6 +142,7 @@ class ShapeView: UIView {
             print("converted: \(drawingPoints)")
             
         }
+        print("This is the drawing points \(drawingPoints)")
         return drawingPoints
     }
     
