@@ -92,6 +92,9 @@ class ShapeView: UIView {
         }
     }
     
+    func getDrawingPoints() -> [CGPoint] {
+        return []
+    }
     
     func show(shape: Shape?){
         self.shape = shape
