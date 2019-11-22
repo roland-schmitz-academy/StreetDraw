@@ -66,7 +66,7 @@
                                                     <rect key="frame" x="20" y="12" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jta-dc-FI0">
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jta-dc-FI0" customClass="ShapeView" customModule="StreetDraw" customModuleProvider="target">
                                                             <rect key="frame" x="10" y="10" width="60" height="60"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,7 +84,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="accuracyLabel" destination="zSr-Fh-1I5" id="8S2-FY-FAC"/>
-                                            <outlet property="challengeName" destination="VkG-kZ-UDK" id="ZF1-dq-g9C"/>
                                             <outlet property="challengeNameLabel" destination="VkG-kZ-UDK" id="fI4-Bs-RPq"/>
                                             <outlet property="scoreLabel" destination="cI0-D9-Gu4" id="TKb-uu-5w1"/>
                                             <outlet property="shapeBackgroundView" destination="YPr-9T-Xjo" id="NY1-6w-l7z"/>
