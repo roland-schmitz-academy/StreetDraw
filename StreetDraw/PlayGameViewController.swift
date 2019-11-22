@@ -88,7 +88,13 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         inRunningMode = true
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "ending" {
+            if let scoreViewController = segue.destination as? ScoreViewController {
+                // todo scoreViewController.prepareResults(...)
+                scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: nil)
+            }
+            
+        }
     }
     
     func prepareForChallenge(chapter: Chapter?, challenge: Challenge?, shapeOverlay: MKOverlay) {
