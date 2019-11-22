@@ -18,6 +18,7 @@
 		FC5B05D62381E7030095A43B /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D52381E7030095A43B /* ScoreViewController.swift */; };
 		FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */; };
 		FC5B05DA2381E7EA0095A43B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */; };
+		FC5F1FA4238888D00080E3F3 /* MapKitOverlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */; };
 		FCBCF2AA238525E00018A552 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCF2A9238525E00018A552 /* ShapeView.swift */; };
 		FCBCF2AC2385F3B80018A552 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBCF2AB2385F3B80018A552 /* RoundedButton.swift */; };
 		FCBCF2AE2385FB030018A552 /* PlayGame.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */; };
@@ -53,6 +54,7 @@
 		FC5B05D52381E7030095A43B /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		FC5B05D72381E7BF0095A43B /* AchievementsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsViewController.swift; sourceTree = "<group>"; };
 		FC5B05D92381E7EA0095A43B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitOverlays.swift; sourceTree = "<group>"; };
 		FCBCF2A9238525E00018A552 /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		FCBCF2AB2385F3B80018A552 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		FCBCF2AD2385FB030018A552 /* PlayGame.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayGame.storyboard; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				FCBCF2B32386AAEB0018A552 /* AppColors.swift */,
 				4C41D07E2388002A006E9682 /* timeToString.swift */,
 				54C76DBF23881615008F96CD /* PersisData.swift */,
+				FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,
 				FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */,
 				FCBCF2AA238525E00018A552 /* ShapeView.swift in Sources */,
+				FC5F1FA4238888D00080E3F3 /* MapKitOverlays.swift in Sources */,
 				FC5B058E2381B02B0095A43B /* SceneDelegate.swift in Sources */,
 				FCD5AAA3238352F300738DCB /* StreetDrawApplicationFactory.swift in Sources */,
 				FC5B05D82381E7BF0095A43B /* AchievementsViewController.swift in Sources */,

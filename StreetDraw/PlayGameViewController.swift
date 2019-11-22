@@ -101,5 +101,11 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         self.chapter = chapter
         self.challenge = challenge
         self.shapeOverlay = shapeOverlay
+        if let polyline = shapeOverlay as? MKPolyline {
+            let coordinates = polyline.coordinates
+            for coordinate in coordinates {
+                print("latitude: \(coordinate.latitude) longitude: \(coordinate.longitude)")
+            }
+        }
     }
 }
