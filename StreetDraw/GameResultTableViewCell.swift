@@ -37,7 +37,7 @@ class GameResultTableViewCell: UITableViewCell {
         self.challenge = gameResult.challenge
         challengeNameLabel.text = "\(gameResult.challenge.name)"
         scoreLabel.text = "\(gameResult.score)"
-        accuracyLabel.text = "\(gameResult.accuracy)"
+        accuracyLabel.text = "\((gameResult.accuracy)*100) %"
         shapeView.show(shape: gameResult.challenge.shape)
         shapeBackgroundView.backgroundColor = gameResult.challenge.difficulty.getColor()
     }

@@ -72,7 +72,11 @@ class StreetDrawApplication {
     init(chapters: [Chapter]) {
         self.chapters = chapters
         // only for testing:
-        self.achievements = Achievements(results: [GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), accuracy: 0.78, score: 12435), GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), accuracy: 0.11, score: 12312312)])
+        self.achievements = Achievements(results: [
+            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), accuracy: 0.78, score: 12435),
+            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), accuracy: 0.11, score: 12312312),
+            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[1], track: Track(), accuracy: 0.56, score: 53836)
+        ])
     }
 }
 
