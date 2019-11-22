@@ -11,8 +11,8 @@ import UIKit
 class GameResultTableViewCell: UITableViewCell {
 
     var gameResult: GameResult?
-//    var chapter: Chapter?
-//    var challenge: Challenge?
+    var chapter: Chapter?
+    var challenge: Challenge?
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var accuracyLabel: UILabel!
@@ -33,10 +33,12 @@ class GameResultTableViewCell: UITableViewCell {
 
     func prepareFor(gameResult: GameResult) {
         self.gameResult = gameResult
-//        self.chapter = gameResult.chapter
-//        self.challenge = gameResult.challenge
-        challengeNameLabel.text = "\(gameResult.challenge)"
+        self.chapter = gameResult.chapter
+        self.challenge = gameResult.challenge
+        challengeNameLabel.text = "\(gameResult.challenge.name)"
         scoreLabel.text = "\(gameResult.score)"
         accuracyLabel.text = "\(gameResult.accuracy)"
+        shapeView.show(shape: gameResult.challenge.shape)
+        shapeBackgroundView.backgroundColor = gameResult.challenge.difficulty.getColor()
     }
 }
