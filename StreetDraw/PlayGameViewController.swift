@@ -66,7 +66,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
             renderer.strokeColor = .systemBlue
             renderer.alpha = 0.8
         }
-        renderer.lineWidth = 10
+        renderer.lineWidth = 8
         return renderer
 
     }
