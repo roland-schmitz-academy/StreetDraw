@@ -10,7 +10,7 @@
         <!--Score-->
         <scene sceneID="VM7-Vo-wOF">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-IU9-if-kOy" title="Score" id="IU9-if-kOy" customClass="ScoreViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-IU9-if-kOy" title="Score" id="IU9-if-kOy" customClass="ScoreViewController" customModule="Walk_n_Draw" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Q6S-vN-4hI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                         <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qm8-5Z-srl" customClass="ShapeView" customModule="StreetDraw" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qm8-5Z-srl" customClass="ShapeView" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="18" y="24" width="181" height="181"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -103,7 +103,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-VT-Myd">
                                 <rect key="frame" x="0.0" y="693" width="414" height="142"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLk-ZW-qyG" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLk-ZW-qyG" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="16.579097422349832" y="38.535085762983272" width="180.19365803793224" height="48.391229720441103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,7 +121,7 @@
                                             <action selector="retryButtonTouched:" destination="IU9-if-kOy" eventType="touchUpInside" id="vjl-UT-KJs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgx-Xf-UM7" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgx-Xf-UM7" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="16.579097422349832" y="106.66484339570957" width="378.21566386760333" height="47.754503013593194"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -139,7 +139,7 @@
                                             <action selector="nextChallengeButtonTouched:" destination="IU9-if-kOy" eventType="touchUpInside" id="dsa-SZ-imh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-XM-q1s" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-XM-q1s" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="214.60110325202095" y="38.535085762983272" width="180.19365803793224" height="48.391229720441103"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -182,6 +182,7 @@
                     <navigationItem key="navigationItem" id="5ff-dz-yk0"/>
                     <connections>
                         <outlet property="mapView" destination="dC1-hs-Uee" id="MOl-mr-UyU"/>
+                        <outlet property="shapeView" destination="Qm8-5Z-srl" id="fV6-p4-Nau"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hB-an-c4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,15 +14,26 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     var trackOverlay: MKOverlay?
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var shapeView: ShapeView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
         print("ScoreViewController.viewDidLoad()")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         print("ScoreViewController.viewWillAppear()")
         setupUserTrackingButton()
+        mapView.showsUserLocation = true
+            //mapView.userTrackingMode = .follow
+            
+            if let shapeOverlay = shapeOverlay {
+                mapView.addOverlay(shapeOverlay)
+                let bounds = shapeOverlay.boundingMapRect
+                mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
+
+            }
         
         
     }
@@ -30,6 +41,21 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         print("ScoreViewController.viewDidAppear()")
         mapView.showsUserLocation = true
     }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+          print("render!")
+          let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
+          if overlay === self.shapeOverlay {
+              renderer.strokeColor = .systemGray // challenge?.difficulty.getColor()
+              renderer.alpha = 0.4
+          } else {
+              renderer.strokeColor = .systemBlue
+              renderer.alpha = 0.8
+          }
+          renderer.lineWidth = 8
+          return renderer
+
+      }
     
     func setupUserTrackingButton() {
         let button = MKUserTrackingButton(mapView: mapView)
@@ -94,14 +120,8 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     }
     
     func createShape(points : [CGPoint]) -> Shape{
-        let shape = Shape(points: [
-//            use points
-            CGPoint(x: 0,y: 0),
-            CGPoint(x: 0,y: 1),
-            CGPoint(x: 1,y: 1),
-            CGPoint(x: 1,y: 0),
-            CGPoint(x: 0,y: 0)
-        ])
+        let shape = Shape(points: points)
+    
 
         return shape
         
