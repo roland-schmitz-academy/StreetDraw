@@ -76,10 +76,14 @@ class ShapeView: UIView {
             let dx = (lineWidth + w2 - sw * scale) / 2.0
             let dy = (lineWidth + h2 - sh * scale) / 2.0
             
-            path.move(to: CGPoint(x: shape.points[0].x  * scale + dx, y: shape.points[0].y * scale + dy))
-            
-            for point in shape.points.dropFirst() {
-                path.addLine(to: CGPoint(x: point.x  * scale + dx, y: point.y * scale + dy))
+//            path.move(to: CGPoint(x: shape.points[0].x  * scale + dx, y: shape.points[0].y * scale + dy))
+//
+//            for point in shape.points.dropFirst() {
+//                path.addLine(to: CGPoint(x: point.x  * scale + dx, y: point.y * scale + dy))
+            path.move(to: CGPoint(x: (shape.points[0].x - minx)  * scale + dx, y: (shape.points[0].y - miny) * scale + dy))
+               
+               for point in shape.points.dropFirst() {
+                   path.addLine(to: CGPoint(x: (point.x - minx)  * scale + dx, y: (point.y - miny) * scale + dy))
             }
             path.stroke()
             

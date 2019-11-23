@@ -32,8 +32,11 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
                 mapView.addOverlay(shapeOverlay)
                 let bounds = shapeOverlay.boundingMapRect
                 mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
-
-            }
+                
+        }
+        self.shapeView.tintColor = .orange
+        self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
+        
         
         
     }
@@ -99,10 +102,11 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         self.trackOverlay = trackOverlay
     }
     
+   
     
   
     
-    func getPointOfOverlay(shapeOverlay: MKOverlay)-> [CGPoint]{
+    func getPointOfOverlay(shapeOverlay: MKOverlay?)-> [CGPoint]{
         var points: [CGPoint] = []
         var point: CGPoint = CGPoint.init()
         self.shapeOverlay = shapeOverlay
