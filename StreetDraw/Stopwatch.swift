@@ -45,8 +45,9 @@ class Stopwatch {
     }
 
     var activeDuration: TimeInterval {
-        
-        return overallDuration-totalPauseTime
+        var now = Date().timeIntervalSince1970
+        return now - startingTime-totalPauseTime
+
     }
 
 }
