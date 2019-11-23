@@ -18,6 +18,8 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shapeView: ShapeView!
     
+    // todo Pasquale: add outlets for result labels
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -28,8 +30,13 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         print("ScoreViewController.viewWillAppear()")
         setupUserTrackingButton()
         mapView.showsUserLocation = true
-            //mapView.userTrackingMode = .follow
-            
+        //mapView.userTrackingMode = .follow
+        
+        // todo Pasquale: fill the labels wuth the game results:
+
+        
+        
+        // add the shapeOverlay to the map
         if let shapeOverlay = shapeOverlay {
             mapView.addOverlay(shapeOverlay)
             let bounds = shapeOverlay.boundingMapRect
@@ -39,8 +46,14 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
             let insetBounds = doubleBounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 )
             mapView.setVisibleMapRect(insetBounds, animated: true)
         }
-
+        
+        // todo Roland: add the trackOverlay to the map
+        
+        
+        // show the shape in the results box
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
+        
+        // todo Roland: show the track in the results box
         
     }
     override func viewDidAppear(_ animated: Bool) {
