@@ -24,6 +24,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         print("ScoreViewController.viewWillAppear()")
         setupUserTrackingButton()
         
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         print("ScoreViewController.viewDidAppear()")
@@ -72,6 +73,66 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         self.trackOverlay = trackOverlay
     }
     
+    
+  
+    
+    func getPointOfOverlay(shapeOverlay: MKOverlay)-> [CGPoint]{
+        var points: [CGPoint] = []
+        var point: CGPoint = CGPoint.init()
+        self.shapeOverlay = shapeOverlay
+        if let polyline = shapeOverlay as? MKPolyline {
+            let coordinates = polyline.coordinates
+            for coordinate in coordinates {
+                point.x = CGFloat(coordinate.latitude)
+                point.y = CGFloat(coordinate.longitude)
+                points.append(point)
+            }
+            
+        }
+        return points
+        
+    }
+    
+    func createShape(points : [CGPoint]) -> Shape{
+        let shape = Shape(points: [
+//            use points
+            CGPoint(x: 0,y: 0),
+            CGPoint(x: 0,y: 1),
+            CGPoint(x: 1,y: 1),
+            CGPoint(x: 1,y: 0),
+            CGPoint(x: 0,y: 0)
+        ])
+
+        return shape
+        
+      }
+             
+             
+}
+
+
+
+
+//
+//func getShapeInPoints(overlay: MKOverlay){
+//    if let polyline = shapeOverlay as? MKPolyline {
+//        let coordinates: [CLLocationCoordinate2D] = polyline.coordinates
+//        let points: [CGPoint] = convertToCgpoint(coordinates: [CLLocationCoordinate2D])
+//       }
+//}
+//func convertToCgpoint(coordinates: [CLLocationCoordinate2D]) -> [CGPoint]{
+//         var points: [CGPoint] = []
+//         var point: CGPoint
+//    for coordinate in coordinates{
+//        point.x = CGFloat(coordinate.latitude)
+//        point.y = CGFloat(coordinate.longitude)
+//        points.append(point)
+//
+//
+//    }
+//    return points
+//    }
+
     /*
     // MARK: - Navigation
 
@@ -82,4 +143,4 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     }
     */
 
-}
+
