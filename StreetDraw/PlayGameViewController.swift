@@ -9,22 +9,36 @@
 import UIKit
 import MapKit
 
-class PlayGameViewController: UIViewController, MKMapViewDelegate {
-    var chapter: Chapter?
-    var challenge: Challenge?
+class PlayGameViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var shapeOverlay: MKOverlay?
+    var timer: Timer?
+    var game: Game?
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var stopButton: RoundedButton!
     @IBOutlet weak var resumeButton: RoundedButton!
     @IBOutlet weak var endButton: RoundedButton!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var inRunningMode = true {
         didSet {
             updateButtons()
+            updateGameState()
         }
     }
     
+    func updateGameState() {
+        // todo later: finsd out if user is still moving and automatically pause or resume the game
+        // for now we pause if user taps on Stop and we continue if user taps on Resume
+        if inRunningMode {
+            game?.continue()
+        } else {
+            game?.pause()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -32,8 +46,10 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        appDelegate.locationManager?.delegate = self
+        appDelegate.requestLocationAuthorization()
         mapView.showsUserLocation = true
-        //mapView.userTrackingMode = .follow
+        game?.start()
         updateButtons()
         if let shapeOverlay = shapeOverlay {
             mapView.addOverlay(shapeOverlay)
@@ -41,6 +57,24 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
             mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
 
         }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
+            DispatchQueue.main.async {
+                self.updateTimeLabel()
+            }
+        }
+        
+    }
+    
+    func updateTimeLabel() {
+        timeLabel?.text = timeToString(from: game?.stopwatch.activeDuration ?? 0.0)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // todo stop timer
+        timer?.invalidate()
+        timer = nil
     }
     
     func setupUserTrackingButton() {
@@ -60,7 +94,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         print("render!")
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         if overlay === self.shapeOverlay {
-            renderer.strokeColor = .systemGray // challenge?.difficulty.getColor()
+            renderer.strokeColor = .systemGray // game?.challenge?.difficulty.getColor()
             renderer.alpha = 0.4
         } else {
             renderer.strokeColor = .systemBlue
@@ -87,19 +121,19 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     @IBAction func resumeButtonTouched(_ sender: RoundedButton) {
         inRunningMode = true
     }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ending" {
+            game!.end()
             if let scoreViewController = segue.destination as? ScoreViewController {
-                // todo scoreViewController.prepareResults(...)
+                scoreViewController.prepareForGameResult(gameResult: game!.gameResult)
                 scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: nil)
             }
-            
         }
     }
     
-    func prepareForChallenge(chapter: Chapter?, challenge: Challenge?, shapeOverlay: MKOverlay) {
-        self.chapter = chapter
-        self.challenge = challenge
+    func prepareForChallenge(chapter: Chapter, challenge: Challenge, shapeOverlay: MKOverlay) {
+        self.game = Game(chapter: chapter, challenge: challenge)
         self.shapeOverlay = shapeOverlay
         if let polyline = shapeOverlay as? MKPolyline {
             let coordinates = polyline.coordinates

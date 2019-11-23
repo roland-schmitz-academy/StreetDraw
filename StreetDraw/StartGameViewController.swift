@@ -14,7 +14,7 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
 
     var chapter: Chapter?
     var challenge: Challenge?
-    let locationManager = (UIApplication.shared.delegate as? AppDelegate)?.locationManager
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shapeView: ShapeView!
@@ -25,12 +25,12 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager?.delegate = self
         self.mapView.delegate = self
         setupUserTrackingButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        appDelegate.locationManager?.delegate = self
         updateValues()
     }
 
@@ -45,12 +45,6 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
             timeLimitLabel.text = ""
             timeLimitCaption.alpha = 0
         }
-//        timeLimitLabel.text = timeToString(from: <#T##TimeInterval#>)
-//        timeLimitLabel.text = "\(timeToString(from: challenge!.maxDuration))"
-//        timeLimitLabel.text = !(challenge!.maxDuration!)? (timeToString(from: challenge!.maxDuration!)) : " "
-        
-        
-        // todo change distance and timeLimit
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,21 +53,6 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
         appDelegate.startGameViewController = self
     }
     
-    var askedForLocationAccess = false
-    
-    func checkLocationAuthorizationStatus() {
-        guard !askedForLocationAccess else { return }
-        print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
-        locationManager?.requestAlwaysAuthorization()
-        print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
-
-//      if CLLocationManager.authorizationStatus() == .authorizedAlways {
-//        mapView.showsUserLocation = true
-//      } else {
-//        locationManager.requestWhenInUseAuthorization()
-//      }
-    }
-
     func setupUserTrackingButton() {
         let button = MKUserTrackingButton(mapView: mapView)
         button.layer.backgroundColor = UIColor(white: 1, alpha: 0.7).cgColor
@@ -88,7 +67,7 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     }
 
     func mapViewWillStartLocatingUser(_ mapView: MKMapView) {
-        checkLocationAuthorizationStatus()
+        appDelegate.requestLocationAuthorization()
     }
 
     func prepareFor(chapter: Chapter, challenge: Challenge) {
@@ -98,15 +77,10 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "playing" {
-            checkLocationAuthorizationStatus()
-        
             let overlay = getShapeOverlay()
             print("overlay is : \((overlay as! MKPolyline).points())")
             if let playGameViewController = segue.destination as? PlayGameViewController {
-                playGameViewController.prepareForChallenge(chapter: chapter, challenge: challenge, shapeOverlay: overlay)
-            }
-            if (segue.destination as? PlayGameViewController) != nil {
-                
+                playGameViewController.prepareForChallenge(chapter: chapter!, challenge: challenge!, shapeOverlay: overlay)
             }
         }
     }

@@ -11,11 +11,11 @@ import CoreGraphics
 
 func createStreetDrawApplication() -> StreetDrawApplication {
     let square = Shape(points: [
-        CGPoint(x: 0,y: 0),
-        CGPoint(x: 0,y: 1),
-        CGPoint(x: 1,y: 1),
-        CGPoint(x: 1,y: 0),
-        CGPoint(x: 0,y: 0)
+        CGPoint(x: 3,y: -3),
+        CGPoint(x: 3,y: -10),
+        CGPoint(x: 10,y: -10),
+        CGPoint(x: 10,y: -3),
+        CGPoint(x: 3,y: -3)
     ])
     let rectangle = Shape(points: [
         CGPoint(x: 0,y: 0),

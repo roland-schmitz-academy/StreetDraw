@@ -46,17 +46,12 @@ class Track {
     // todo: mutable collection of locations from LocationManager
 }
 
-struct Game {
-    let challenge: Challenge
-    let chapter: Chapter
-    let track = Track()
-    let stopwatch = Stopwatch()
-}
-
 struct GameResult {
     let chapter: Chapter
     let challenge: Challenge
     let track: Track
+    let distance: CLLocationDistance
+    let duration: TimeInterval?
     let accuracy: Float
     let score: Int
 }
@@ -73,10 +68,10 @@ class StreetDrawApplication {
         self.chapters = chapters
         // only for testing:
         self.achievements = Achievements(results: [
-            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), accuracy: 0.78, score: 12435),
-            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), accuracy: 0.11, score: 12312),
-            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[0], track: Track(), accuracy: 0.56, score: 53836),
-            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[1], track: Track(), accuracy: 0.87, score: 36)
+            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[0], track: Track(), distance: 12345, duration: 1234, accuracy: 0.78, score: 12435),
+            GameResult(chapter: chapters[0], challenge: chapters[0].challenges[1], track: Track(), distance: 12344, duration: 1235, accuracy: 0.11, score: 12312),
+            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[0], track: Track(), distance: 12343, duration: 1236, accuracy: 0.56, score: 5386),
+            GameResult(chapter: chapters[3], challenge: chapters[3].challenges[1], track: Track(), distance: 12342, duration: 1237, accuracy: 0.87, score: 36)
         ])
     }
 }

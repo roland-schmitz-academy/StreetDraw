@@ -40,7 +40,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-
-
+    
+    func requestLocationAuthorization() {
+        print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
+        let status = CLLocationManager.authorizationStatus()
+        if status == .restricted || status == .denied {
+            showAlert(title: "Location Services", message: "Location services for the app are currently disabled. Please enable them in the Settings. ") {
+                self.locationManager?.requestAlwaysAuthorization()
+            }
+        }
+        else {
+            locationManager?.requestAlwaysAuthorization()
+        }
+    }
+    
+    func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
+        print("#### Alert: \(title): \(message) ")
+//        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+        if var topController = UIApplication.shared.windows.last?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            topController.present(alertController, animated: true, completion: completion)
+        } else {
+            completion?()
+        }
+    }
+    
 }
 

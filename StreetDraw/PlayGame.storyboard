@@ -10,7 +10,7 @@
         <!--Play Game View Controller-->
         <scene sceneID="lWp-gA-tFP">
             <objects>
-                <viewController id="g45-fd-M80" customClass="PlayGameViewController" customModule="StreetDraw" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="g45-fd-M80" customClass="PlayGameViewController" customModule="Walk_n_Draw" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bZt-tm-nJR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7t-Yh-TQp">
                                 <rect key="frame" x="0.0" y="699" width="414" height="163"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOP-kF-4A2" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOP-kF-4A2" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="18" y="95" width="378" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,7 +65,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-jw-igZ" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k0b-jw-igZ" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="18" y="95" width="175" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,7 +81,7 @@
                                             <action selector="resumeButtonTouched:" destination="g45-fd-M80" eventType="touchUpInside" id="4QC-OJ-oez"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkG-98-Nvn" customClass="RoundedButton" customModule="StreetDraw" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lkG-98-Nvn" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
                                         <rect key="frame" x="221" y="95" width="175" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,10 +116,12 @@
                         <viewLayoutGuide key="safeArea" id="N3w-Dl-Z4y"/>
                     </view>
                     <connections>
+                        <outlet property="distanceLabel" destination="4cc-ZW-0L0" id="ADA-2L-pyJ"/>
                         <outlet property="endButton" destination="lkG-98-Nvn" id="u8b-a5-2nw"/>
                         <outlet property="mapView" destination="whW-zj-DqO" id="4zA-zJ-6TK"/>
                         <outlet property="resumeButton" destination="k0b-jw-igZ" id="u7L-jt-Wbe"/>
                         <outlet property="stopButton" destination="tOP-kF-4A2" id="V0g-so-6bI"/>
+                        <outlet property="timeLabel" destination="PVr-VK-VG2" id="SZC-u8-jeI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yaC-9A-Upq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,8 @@ import UIKit
 import MapKit
 
 class ScoreViewController: UIViewController, MKMapViewDelegate {
+    var gameResult: GameResult?
+    
     var shapeOverlay: MKOverlay?
     var trackOverlay: MKOverlay?
     
@@ -28,21 +30,17 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         mapView.showsUserLocation = true
             //mapView.userTrackingMode = .follow
             
-            if let shapeOverlay = shapeOverlay {
-                mapView.addOverlay(shapeOverlay)
-                let bounds = shapeOverlay.boundingMapRect
-                mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
-                
+        if let shapeOverlay = shapeOverlay {
+            mapView.addOverlay(shapeOverlay)
+            let bounds = shapeOverlay.boundingMapRect
+            // to let the shape appear on the upper half of the map:
+            let doubleBounds = MKMapRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: bounds.height * 2)
+            // give it a border
+            let insetBounds = doubleBounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 )
+            mapView.setVisibleMapRect(insetBounds, animated: true)
         }
-        self.shapeView.tintColor = .orange
+
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
-        
-//        let radians = 180.0 / 180.0 * CGFloat.pi
-//        let rotation = shapeView.transform.rotated(by: radians);
-//              shapeView.transform = rotation
-        
-        
-        
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -76,6 +74,10 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
 
         NSLayoutConstraint.activate([button.bottomAnchor.constraint(equalTo: mapView.bottomAnchor, constant: -10),
                                      button.trailingAnchor.constraint(equalTo: mapView.trailingAnchor, constant: -10)])
+    }
+
+    func prepareForGameResult(gameResult: GameResult) {
+        self.gameResult = gameResult
     }
 
     @IBAction func challengesButtonTouched(_ sender: Any) {
@@ -122,18 +124,13 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
                 point.y = CGFloat(-coordinate.latitude)
                 points.append(point)
             }
-            
         }
         return points
-        
     }
     
     func createShape(points : [CGPoint]) -> Shape{
         let shape = Shape(points: points)
-    
-
         return shape
-        
       }
              
              
