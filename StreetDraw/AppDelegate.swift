@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        print("didFinishLaunchingWithOptions: \(String(describing: launchOptions))")
         streetDrawApp = createStreetDrawApplication()
         print("CLLocationManager.authorizationStatus(): \(CLLocationManager.authorizationStatus().rawValue)")
         locationManager = CLLocationManager()
-        
+        //locationManager?.allowsBackgroundLocationUpdates = true
         return true
     }
 
