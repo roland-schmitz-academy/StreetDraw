@@ -88,12 +88,24 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         inRunningMode = true
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "ending" {
+            if let scoreViewController = segue.destination as? ScoreViewController {
+                // todo scoreViewController.prepareResults(...)
+                scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: nil)
+            }
+            
+        }
     }
     
     func prepareForChallenge(chapter: Chapter?, challenge: Challenge?, shapeOverlay: MKOverlay) {
         self.chapter = chapter
         self.challenge = challenge
         self.shapeOverlay = shapeOverlay
+        if let polyline = shapeOverlay as? MKPolyline {
+            let coordinates = polyline.coordinates
+            for coordinate in coordinates {
+                print("latitude: \(coordinate.latitude) longitude: \(coordinate.longitude)")
+            }
+        }
     }
 }

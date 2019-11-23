@@ -9,7 +9,10 @@
 import UIKit
 import MapKit
 
-class ScoreViewController: UIViewController {
+class ScoreViewController: UIViewController, MKMapViewDelegate {
+    var shapeOverlay: MKOverlay?
+    var trackOverlay: MKOverlay?
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -20,6 +23,7 @@ class ScoreViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         print("ScoreViewController.viewWillAppear()")
         setupUserTrackingButton()
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         print("ScoreViewController.viewDidAppear()")
@@ -62,6 +66,12 @@ class ScoreViewController: UIViewController {
             })
         }
     }
+    
+    func prepareOverlays(shapeOverlay: MKOverlay?, trackOverlay: MKOverlay?) {
+        self.shapeOverlay = shapeOverlay
+        self.trackOverlay = trackOverlay
+    }
+    
     /*
     // MARK: - Navigation
 
