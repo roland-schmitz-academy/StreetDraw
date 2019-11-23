@@ -37,6 +37,11 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         self.shapeView.tintColor = .orange
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
         
+//        let radians = 180.0 / 180.0 * CGFloat.pi
+//        let rotation = shapeView.transform.rotated(by: radians);
+//              shapeView.transform = rotation
+        
+        
         
         
     }
@@ -113,8 +118,8 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         if let polyline = shapeOverlay as? MKPolyline {
             let coordinates = polyline.coordinates
             for coordinate in coordinates {
-                point.x = CGFloat(coordinate.latitude)
-                point.y = CGFloat(coordinate.longitude)
+                point.x = CGFloat(coordinate.longitude)
+                point.y = CGFloat(-coordinate.latitude)
                 points.append(point)
             }
             

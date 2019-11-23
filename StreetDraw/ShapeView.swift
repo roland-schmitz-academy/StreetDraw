@@ -106,11 +106,20 @@ class ShapeView: UIView {
         
         if let shape = shape, shape.points.count > 1 {
             
-            var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
-            var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
+            var minx : CGFloat = CGFloat.greatestFiniteMagnitude
+            var maxx: CGFloat = -CGFloat.greatestFiniteMagnitude
+            var miny : CGFloat = CGFloat.greatestFiniteMagnitude
+            var maxy: CGFloat = -CGFloat.greatestFiniteMagnitude
+            
+         
+            
+//            var minx : CGFloat = CGFloat.greatestFiniteMagnitude, maxx: CGFloat = CGFloat.leastNormalMagnitude
+//            var miny : CGFloat = CGFloat.greatestFiniteMagnitude, maxy: CGFloat = CGFloat.leastNormalMagnitude
             
             //            Calculate the constraints to draw the shapes
-            for point in shape.points.dropFirst() {
+//            for point in shape.points.dropFirst() {
+            
+            for point in shape.points {
                 if (point.x < minx){
                     minx = point.x
                 }
@@ -125,6 +134,9 @@ class ShapeView: UIView {
                 }
                 
             }
+            print("min X : \(minx)")
+            print("min X : \(maxy)")
+
             let sw = maxx - minx
             let sh = maxy - miny
             let w2 = self.bounds.width - lineWidth
