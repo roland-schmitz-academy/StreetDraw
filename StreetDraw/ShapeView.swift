@@ -43,7 +43,7 @@ class ShapeView: UIView {
         path.lineJoinStyle = .round
         tintColor.setStroke()
         
-        if let shape = shape, shape.points.count > 1 {//if we can draw the shape
+        if let shape = shape, shape.points.count > 1 {
             
             var minx : CGFloat = CGFloat.greatestFiniteMagnitude
             var maxx: CGFloat = -CGFloat.greatestFiniteMagnitude
@@ -135,8 +135,8 @@ class ShapeView: UIView {
                 }
                 
             }
-            print("min X : \(minx)")
-            print("min X : \(maxy)")
+//            print("min X : \(minx)")
+//            print("min X : \(maxy)")
 
             let sw = maxx - minx
             let sh = maxy - miny
@@ -152,7 +152,7 @@ class ShapeView: UIView {
             
             
             for point in shape.points {
-                drawingPoints.append(CGPoint(x: point.x * scale + dx,y: point.y * scale + dy))
+                drawingPoints.append(CGPoint(x: (point.x - minx) * scale + dx,y: (point.y - miny) * scale + dy))
                 
             }
             
