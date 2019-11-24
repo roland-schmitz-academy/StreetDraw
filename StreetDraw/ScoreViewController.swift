@@ -160,14 +160,12 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     
     func getPointOfOverlay(shapeOverlay: MKOverlay?)-> [CGPoint]{
         var points: [CGPoint] = []
-        var point: CGPoint = CGPoint.init()
         self.shapeOverlay = shapeOverlay
         if let polyline = shapeOverlay as? MKPolyline {
             let coordinates = polyline.coordinates
             for coordinate in coordinates {
-                point.x = CGFloat(coordinate.longitude)
-                point.y = CGFloat(-coordinate.latitude)
-                points.append(point)
+                let mapPoint = MKMapPoint(coordinate)
+                points.append(CGPoint(x: mapPoint.x, y: mapPoint.y))
             }
         }
         return points
