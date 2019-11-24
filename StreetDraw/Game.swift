@@ -55,7 +55,8 @@ class Game: NSObject, CLLocationManagerDelegate {
         print("#################### Start tracking locations")
         appDelegate.locationManager?.delegate = self
         appDelegate.requestLocationAuthorization()
-        appDelegate.locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        //appDelegate.locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        appDelegate.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         appDelegate.locationManager?.activityType = .fitness
         appDelegate.locationManager?.pausesLocationUpdatesAutomatically = false
         appDelegate.locationManager?.showsBackgroundLocationIndicator = true
