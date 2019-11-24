@@ -181,8 +181,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="5ff-dz-yk0"/>
                     <connections>
+                        <outlet property="accuracyLabel" destination="6q9-Bd-dSl" id="prd-0Q-Uuc"/>
+                        <outlet property="distanceLabel" destination="asW-LN-aEz" id="Z4w-Rg-cfi"/>
                         <outlet property="mapView" destination="dC1-hs-Uee" id="MOl-mr-UyU"/>
+                        <outlet property="pointsLabel" destination="taf-cQ-0m4" id="H50-nb-RhJ"/>
                         <outlet property="shapeView" destination="Qm8-5Z-srl" id="fV6-p4-Nau"/>
+                        <outlet property="timeLabel" destination="jWd-4C-2R6" id="Wmh-2a-f3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hB-an-c4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

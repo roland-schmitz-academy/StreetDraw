@@ -17,6 +17,10 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var shapeView: ShapeView!
+    @IBOutlet weak var accuracyLabel: UILabel!
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     // todo Pasquale: add outlets for result labels
     
@@ -31,6 +35,10 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         setupUserTrackingButton()
         mapView.showsUserLocation = true
         //mapView.userTrackingMode = .follow
+        accuracyLabel.text = "\((gameResult!.accuracy) * 100) %"
+        pointsLabel.text = "\(gameResult!.score)"
+        distanceLabel.text = "\(gameResult!.distance) km"
+        timeLabel.text = "\(gameResult!.duration)"
         
         // todo Pasquale: fill the labels wuth the game results:
 
