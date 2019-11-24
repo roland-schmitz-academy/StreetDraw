@@ -46,18 +46,19 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        game?.start(playGameViewController: self)
-        mapView.showsUserLocation = true
-        updateButtons()
-        if let shapeOverlay = shapeOverlay {
-            mapView.addOverlay(shapeOverlay)
-            let bounds = shapeOverlay.boundingMapRect
-            mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
-
-        }
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
-            DispatchQueue.main.async {
-                self.updateDynamicLabels()
+        if game?.start(playGameViewController: self) ?? false {
+            mapView.showsUserLocation = true
+            updateButtons()
+            if let shapeOverlay = shapeOverlay {
+                mapView.addOverlay(shapeOverlay)
+                let bounds = shapeOverlay.boundingMapRect
+                mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
+                
+            }
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
+                DispatchQueue.main.async {
+                    self.updateDynamicLabels()
+                }
             }
         }
     }
@@ -127,10 +128,11 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ending" {
-            game!.end()
-            if let scoreViewController = segue.destination as? ScoreViewController {
-                scoreViewController.prepareForGameResult(gameResult: game!.gameResult)
-                scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: game!.track.createOverlay())
+            if game?.end() ?? false {
+                if let scoreViewController = segue.destination as? ScoreViewController {
+                    scoreViewController.prepareForGameResult(gameResult: game!.gameResult)
+                    scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: game!.track.createOverlay())
+                }
             }
         }
     }

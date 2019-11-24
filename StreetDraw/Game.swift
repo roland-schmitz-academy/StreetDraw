@@ -17,6 +17,8 @@ class Game: NSObject, CLLocationManagerDelegate {
     let challenge: Challenge
     let track = Track()
     let stopwatch = Stopwatch()
+    var started = false
+    var ended = false
     private var viewController: PlayGameViewController?
     
     init(chapter: Chapter, challenge: Challenge) {
@@ -24,10 +26,13 @@ class Game: NSObject, CLLocationManagerDelegate {
         self.challenge = challenge
     }
         
-    func start(playGameViewController: PlayGameViewController) {
+    func start(playGameViewController: PlayGameViewController) -> Bool {
+        if started { return false }
+        started = true
         viewController = playGameViewController
         stopwatch.start()
         startTracking()
+        return true
     }
     
     func pause() {
@@ -38,10 +43,13 @@ class Game: NSObject, CLLocationManagerDelegate {
         stopwatch.continue()
     }
     
-    func end() {
+    func end() -> Bool {
+        if !started || ended { return false }
+        ended = true
         stopTracking()
         stopwatch.stop()
         viewController = nil
+        return true
     }
 
     var gameResult: GameResult {

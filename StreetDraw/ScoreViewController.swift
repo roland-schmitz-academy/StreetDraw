@@ -38,10 +38,10 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         //mapView.userTrackingMode = .follow
 
         // fill the labels wuth the game results:
-        accuracyLabel.text = "\((gameResult!.accuracy) * 100) %"
-        pointsLabel.text = "\(gameResult!.score)"
+        accuracyLabel.text = "\((gameResult?.accuracy ?? 0.0) * 100) %"
+        pointsLabel.text = "\(gameResult?.score ?? 0)"
         distanceLabel.text = formatDistance(distance: gameResult?.distance)
-        timeLabel.text = timeToString(from: gameResult!.duration)
+        timeLabel.text = timeToString(from: gameResult?.duration ?? 0.0)
         
         // add the shapeOverlay to the map
         if let shapeOverlay = shapeOverlay {
