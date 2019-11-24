@@ -88,6 +88,17 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yxy-0h-UMm" customClass="ShapeView" customModule="Walk_n_Draw" customModuleProvider="target">
+                                        <rect key="frame" x="18" y="24" width="181" height="181"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -187,6 +198,7 @@
                         <outlet property="pointsLabel" destination="taf-cQ-0m4" id="H50-nb-RhJ"/>
                         <outlet property="shapeView" destination="Qm8-5Z-srl" id="fV6-p4-Nau"/>
                         <outlet property="timeLabel" destination="jWd-4C-2R6" id="Wmh-2a-f3m"/>
+                        <outlet property="trackShapeView" destination="Yxy-0h-UMm" id="9Jo-sb-n3o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3hB-an-c4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

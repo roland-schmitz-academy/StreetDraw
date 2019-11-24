@@ -16,6 +16,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     var trackOverlay: MKOverlay?
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var trackShapeView: ShapeView!
     @IBOutlet weak var shapeView: ShapeView!
     @IBOutlet weak var accuracyLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -74,8 +75,18 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         // show the shape in the results box
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
         
-        // todo Roland: show the track in the results box
+        // show the track in the results box
+        self.trackShapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.trackOverlay)))
         
+        // show shape and track together inside the ShapeView boxes
+        print("show shape and track together inside the ShapeView boxes")
+        if let shapeBounds = self.shapeView.shapeBounds, let trackShapeBounds = self.trackShapeView.shapeBounds {
+            let unionBounds = shapeBounds.union(trackShapeBounds)
+            self.shapeView.shapeBounds = unionBounds
+            self.trackShapeView.shapeBounds = unionBounds
+        }
+        
+
     }
     override func viewDidAppear(_ animated: Bool) {
         print("ScoreViewController.viewDidAppear()")
