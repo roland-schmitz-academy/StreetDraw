@@ -51,7 +51,7 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     func updateValues() {
         shapeView.tintColor = challenge?.difficulty.getColor()
         shapeView.show(shape: challenge?.shape)
-        minDistanceLabel.text = "\(challenge!.minDistance) km"
+        minDistanceLabel.text = formatDistance(distance: challenge?.minDistance)
         if let maxDuration = challenge?.maxDuration {
             timeLimitLabel.text = timeToString(from: maxDuration)
             timeLimitCaption.alpha = 1

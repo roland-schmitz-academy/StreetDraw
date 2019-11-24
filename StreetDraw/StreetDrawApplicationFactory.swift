@@ -234,43 +234,48 @@ func createStreetDrawApplication() -> StreetDrawApplication {
 //
         
         Chapter(name: "Introduction", challenges: [
-            Challenge(name: "Small Square", shape: square, minDistance: 0.1 , maxDuration: 600, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 0.1, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Small Square", shape: square, minDistance: 100 , maxDuration: 600, standardScore: 100, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Small Rectangle", shape: rectangle, minDistance: 100, maxDuration: nil, standardScore: 100, penaltyScore: nil, difficulty: .easy )
         ]),
         Chapter(name: "Warmup", challenges: [
-            Challenge(name: "Square", shape: square, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Rectangle", shape: rectangle, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Rhombus", shape: rhombus, minDistance: 0.3, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
+            Challenge(name: "Square", shape: square, minDistance: 300, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rectangle", shape: rectangle, minDistance: 300, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Rhombus", shape: rhombus, minDistance: 300, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy )
         ]),
         
         Chapter(name: "Get ready", challenges: [
-            Challenge(name: "Triangle", shape: triangle, minDistance: 0.7, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Star", shape: star, minDistance: 0.7, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal )
+            Challenge(name: "Triangle", shape: triangle, minDistance: 700, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Star", shape: star, minDistance: 700, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal )
         ]),
         
         Chapter(name: "Challenging", challenges: [
-            Challenge(name: "Pentagon", shape: pentagon, minDistance: 1.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "Hexagon", shape: hexagon, minDistance: 1.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
-            Challenge(name: "Octagon", shape: octagon, minDistance: 1.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard)
+            Challenge(name: "Pentagon", shape: pentagon, minDistance: 1000, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "Hexagon", shape: hexagon, minDistance: 1000, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
+            Challenge(name: "Octagon", shape: octagon, minDistance: 1500, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard)
         ]),
         
         Chapter(name: "Engaging", challenges: [
-            Challenge(name: "Flute", shape: flute, minDistance: 1.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
-            Challenge(name: "Bottle", shape: bottle, minDistance: 2.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
+            Challenge(name: "Flute", shape: flute, minDistance: 1500, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
+            Challenge(name: "Bottle", shape: bottle, minDistance: 2000, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
         ]),
         
         Chapter(name: "Serious", challenges: [
-            Challenge(name: "H letter", shape: hLetter, minDistance: 3.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
-            Challenge(name: "L letter", shape: lLetter, minDistance: 2.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
-            Challenge(name: "C letter", shape: cLetter, minDistance: 3.0, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
-            Challenge(name: "X letter", shape: xLetter, minDistance: 4.5, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
+            Challenge(name: "H letter", shape: hLetter, minDistance: 3000, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal ),
+            Challenge(name: "L letter", shape: lLetter, minDistance: 2500, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .easy ),
+            Challenge(name: "C letter", shape: cLetter, minDistance: 3000, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .normal),
+            Challenge(name: "X letter", shape: xLetter, minDistance: 4500, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
         ]),
         
         Chapter(name: "Crazy", challenges: [
-        
+            Challenge(name: "Big Triangle", shape: triangle, minDistance: 7000, maxDuration: 7200, standardScore: 2000, penaltyScore: nil, difficulty: .hard ),
+            Challenge(name: "Big Star", shape: star, minDistance: 8000, maxDuration: 8400, standardScore: 2000, penaltyScore: nil, difficulty: .hard ),
+            Challenge(name: "Big Pentagon", shape: pentagon, minDistance: 9000, maxDuration: 9600, standardScore: 2000, penaltyScore: nil, difficulty: .hard ),
+            Challenge(name: "Big Hexagon", shape: hexagon, minDistance: 10000, maxDuration: 10800, standardScore: 2000, penaltyScore: nil, difficulty: .hard ),
+            Challenge(name: "Big Octagon", shape: octagon, minDistance: 11000, maxDuration: 12000, standardScore: 2000, penaltyScore: nil, difficulty: .hard),
+            Challenge(name: "Big Special", shape: antonio, minDistance: 12000, maxDuration: 13200, standardScore: 2000, penaltyScore: nil, difficulty: .hard)
         ]),
         Chapter(name: "Impossible", challenges: [
-            Challenge(name: "Heart", shape: heart, minDistance: 10, maxDuration: nil, standardScore: 1000, penaltyScore: nil, difficulty: .hard )
+            Challenge(name: "Heart", shape: heart, minDistance: 10000, maxDuration: 10800, standardScore: 3000, penaltyScore: nil, difficulty: .hard )
         ]),
 //        Chapter(name: "Antonio", challenges: [
 //            // todo
