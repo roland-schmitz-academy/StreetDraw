@@ -20,16 +20,18 @@ class Game: NSObject, CLLocationManagerDelegate {
     var started = false
     var ended = false
     private var viewController: PlayGameViewController?
+    private var shapeOverlay: MKOverlay?
     
     init(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
         self.challenge = challenge
     }
         
-    func start(playGameViewController: PlayGameViewController) -> Bool {
+    func start(playGameViewController: PlayGameViewController!, shapeOverlay: MKOverlay!) -> Bool {
         if started { return false }
         started = true
-        viewController = playGameViewController
+        self.viewController = playGameViewController
+        self.shapeOverlay = shapeOverlay
         stopwatch.start()
         startTracking()
         return true
@@ -55,7 +57,19 @@ class Game: NSObject, CLLocationManagerDelegate {
     var gameResult: GameResult {
         get {
             // todo calculate accuracy and score and replace fake values with actual values
-            return GameResult(chapter: chapter, challenge: challenge, track: track, distance: track.distance, duration: stopwatch.activeDuration, accuracy: 0.17, score: 123)
+            let accuracy = calculateAccuracy(shapeOverlay: shapeOverlay, trackOverlay: track.createOverlay())
+            let distance = track.distance
+            let duration = stopwatch.activeDuration
+            var score: Double = 0.0
+            print("accuracy: \(accuracy)")
+            if distance >= challenge.minDistance && duration <= (challenge.maxDuration ?? Double.infinity) {
+                score = Double(challenge.standardScore) * distance / challenge.minDistance
+                if let maxDuration = challenge.maxDuration {
+                    score = score * maxDuration / duration
+                }
+                score *= accuracy
+            }
+            return GameResult(chapter: chapter, challenge: challenge, track: track, distance: distance, duration: duration, accuracy: Float(accuracy), score: Int(score))
         }
     }
     
@@ -97,5 +111,39 @@ class Game: NSObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("######## didFailWithError")
     }
+
+    func calculateAccuracy(shapeOverlay: MKOverlay?, trackOverlay: MKOverlay?) -> Double {
+        var accumulatedDistance = 0.0
+        var numberOfChecks = 0
+
+        func aggregateMinimumDistance(point: MKMapPoint, to referencePoints: [MKMapPoint]) {
+            let distance = referencePoints.map { refPoint in refPoint.distance(to: point) }.min() ?? 500
+            print("distance=\(distance)")
+            accumulatedDistance += distance
+            numberOfChecks += 1
+        }
+
+        if let shapeCoordinates = (shapeOverlay as? MKPolyline)?.coordinates, let trackCoordinates = (trackOverlay as? MKPolyline)?.coordinates, trackCoordinates.count > 1 {
+            let shapeMapPoints = shapeCoordinates.map { coordinate in MKMapPoint(coordinate)}
+            let trackMapPoints = trackCoordinates.map { coordinate in MKMapPoint(coordinate)}
+            (0..<shapeMapPoints.count - 1).forEach { shapeMapPointIndex in
+                let startPoint = shapeMapPoints[shapeMapPointIndex]
+                let endPoint = shapeMapPoints[shapeMapPointIndex+1]
+                let sectionCount = Int(startPoint.distance(to: endPoint) / 100)
+                let dx = (endPoint.x - startPoint.x) / Double(sectionCount)
+                let dy = (endPoint.y - startPoint.y) / Double(sectionCount)
+                (0..<sectionCount).forEach { sectionIndex in
+                    let section = Double(sectionIndex)
+                    let intermediatePoint = MKMapPoint(x: startPoint.x + section * dx, y: startPoint.y + section * dy )
+                    aggregateMinimumDistance(point: intermediatePoint, to: trackMapPoints)
+                }
+            }
+            let meanDistance = accumulatedDistance / Double(numberOfChecks)
+            let accuracy = 1.0 - ((max(100.0, min(meanDistance, 500.0)) - 100.0) / 400.0)
+            return accuracy
+        }
+        return 0.0
+    }
+    
 }
 

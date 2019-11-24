@@ -46,7 +46,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if game?.start(playGameViewController: self) ?? false {
+        if game?.start(playGameViewController: self, shapeOverlay: shapeOverlay) ?? false {
             mapView.showsUserLocation = true
             updateButtons()
             if let shapeOverlay = shapeOverlay {

@@ -100,9 +100,7 @@ class ShapeView: UIView {
             for point in shape.points {
                 drawingPoints.append(CGPoint(x: (point.x - shapeBounds.minX) * scale + dx,y: (point.y - shapeBounds.minY) * scale + dy))
             }
-            print("converted: \(drawingPoints)")
         }
-        print("This is the drawing points \(drawingPoints)")
         return drawingPoints
     }
     
