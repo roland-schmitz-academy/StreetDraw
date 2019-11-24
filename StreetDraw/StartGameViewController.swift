@@ -46,6 +46,10 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     override func viewWillAppear(_ animated: Bool) {
         appDelegate.locationManager?.delegate = self
         updateValues()
+        if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            // if already authorized, then follow user automatically
+            mapView.userTrackingMode = .follow
+        }
     }
 
     func updateValues() {
