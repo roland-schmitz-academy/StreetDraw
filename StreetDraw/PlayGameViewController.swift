@@ -46,7 +46,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        game?.start()
+        game?.start(playGameViewController: self)
         mapView.showsUserLocation = true
         updateButtons()
         if let shapeOverlay = shapeOverlay {
@@ -112,6 +112,10 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         }
     }
     
+    func addTrackOverlay(overlay: MKOverlay) {
+        mapView?.addOverlay(overlay)
+    }
+    
     @IBAction func stopButtonTouched(_ sender: RoundedButton) {
         inRunningMode = false
     }
@@ -131,7 +135,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
     }
     
     func prepareForChallenge(chapter: Chapter, challenge: Challenge, shapeOverlay: MKOverlay) {
-        self.game = Game(chapter: chapter, challenge: challenge)
+        game = Game(chapter: chapter, challenge: challenge)
         self.shapeOverlay = shapeOverlay
         if let polyline = shapeOverlay as? MKPolyline {
             let coordinates = polyline.coordinates

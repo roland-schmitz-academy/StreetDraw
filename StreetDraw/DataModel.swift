@@ -43,7 +43,13 @@ struct Chapter: Equatable {
 }
 
 class Track {
-    // todo: mutable collection of locations from LocationManager
+    var locations: [CLLocation] = []
+    
+    var lastLocation: CLLocation? { locations.last }
+    
+    func addLocations(newLocations: [CLLocation]) {
+        locations += newLocations
+    }
 }
 
 struct GameResult {

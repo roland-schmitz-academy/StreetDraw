@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreLocation
+import MapKit
 
 class Game: NSObject, CLLocationManagerDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -16,6 +17,7 @@ class Game: NSObject, CLLocationManagerDelegate {
     let challenge: Challenge
     let track = Track()
     let stopwatch = Stopwatch()
+    private var viewController: PlayGameViewController?
     
     init(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
@@ -23,7 +25,8 @@ class Game: NSObject, CLLocationManagerDelegate {
         //testTwice()
     }
         
-    func start() {
+    func start(playGameViewController: PlayGameViewController) {
+        viewController = playGameViewController
         stopwatch.start()
         startTracking()
     }
@@ -39,6 +42,7 @@ class Game: NSObject, CLLocationManagerDelegate {
     func end() {
         stopTracking()
         stopwatch.stop()
+        viewController = nil
     }
 
     var gameResult: GameResult {
@@ -63,8 +67,23 @@ class Game: NSObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         print("######## didUpdateLocations \(locations)")
+        let optionalLastLocation = track.lastLocation
+        track.addLocations(newLocations: locations)
+        if let overlay = createOverlay(previousLocation: optionalLastLocation, newLocations: locations) {
+            viewController?.addTrackOverlay(overlay: overlay)
+        }
+        
+    }
+
+    func createOverlay(previousLocation: CLLocation?, newLocations: [CLLocation]) -> MKOverlay? {
+        var coordinates: [CLLocationCoordinate2D] = []
+        if let lastLocation = previousLocation?.coordinate {
+            coordinates.append(lastLocation)
+        }
+        coordinates.append(contentsOf: newLocations.map { location in location.coordinate })
+        guard coordinates.count > 1 else { return nil }
+        return MKPolyline(coordinates: coordinates, count: coordinates.count)
     }
     
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
