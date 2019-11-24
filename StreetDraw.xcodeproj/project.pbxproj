@@ -41,6 +41,7 @@
 		FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */; };
 		FCE7FF112389661A00C30A76 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF102389661A00C30A76 /* Game.swift */; };
 		FCE7FF132389F92E00C30A76 /* TestStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */; };
+		FCE7FF15238A8A6600C30A76 /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		FCE7FF102389661A00C30A76 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStopwatch.swift; sourceTree = "<group>"; };
+		FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				54C76DBF23881615008F96CD /* PersisData.swift */,
 				FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */,
 				FCE7FF102389661A00C30A76 /* Game.swift */,
+				FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */,
 				FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */,
 			);
 			path = StreetDraw;
@@ -239,6 +242,7 @@
 				FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */,
 				FCD5AA9D2381FAA500738DCB /* MainTabBarController.swift in Sources */,
 				FC5B05D22381E68C0095A43B /* ChallengesViewController.swift in Sources */,
+				FCE7FF15238A8A6600C30A76 /* DistanceFormatter.swift in Sources */,
 				FCD5AAA523835B0400738DCB /* Stopwatch.swift in Sources */,
 				FCBCF2AA238525E00018A552 /* ShapeView.swift in Sources */,
 				FC5F1FA4238888D00080E3F3 /* MapKitOverlays.swift in Sources */,

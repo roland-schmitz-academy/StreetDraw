@@ -22,7 +22,6 @@ class Game: NSObject, CLLocationManagerDelegate {
     init(chapter: Chapter, challenge: Challenge) {
         self.chapter = chapter
         self.challenge = challenge
-        //testTwice()
     }
         
     func start(playGameViewController: PlayGameViewController) {
@@ -48,11 +47,12 @@ class Game: NSObject, CLLocationManagerDelegate {
     var gameResult: GameResult {
         get {
             // todo calculate accuracy and score and replace fake values with actual values
-            return GameResult(chapter: chapter, challenge: challenge, track: track, distance: 1234, duration: stopwatch.activeDuration, accuracy: 0.17, score: 123)
+            return GameResult(chapter: chapter, challenge: challenge, track: track, distance: track.distance, duration: stopwatch.activeDuration, accuracy: 0.17, score: 123)
         }
     }
     
     func startTracking() {
+        print("#################### Start tracking locations")
         appDelegate.locationManager?.delegate = self
         appDelegate.requestLocationAuthorization()
         appDelegate.locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
@@ -63,6 +63,7 @@ class Game: NSObject, CLLocationManagerDelegate {
     }
 
     func stopTracking() {
+        print("#################### Stop tracking locations")
         appDelegate.locationManager?.stopUpdatingLocation()
     }
 

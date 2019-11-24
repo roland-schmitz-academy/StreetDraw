@@ -9,6 +9,7 @@
 import Foundation
 import CoreGraphics
 import CoreLocation
+import MapKit
 
 struct Shape {
     let points: [CGPoint]
@@ -49,6 +50,17 @@ class Track {
     
     func addLocations(newLocations: [CLLocation]) {
         locations += newLocations
+    }
+    
+    var distance: CLLocationDistance {
+        var accumulatedDistance = 0.0
+        if var previousMapPoint = locations.first {
+            locations.dropFirst().forEach { nextMapPoint in
+                accumulatedDistance += previousMapPoint.distance(from: nextMapPoint)
+                previousMapPoint = nextMapPoint
+            }
+        }
+        return accumulatedDistance
     }
 }
 

@@ -57,15 +57,16 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
         }
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
             DispatchQueue.main.async {
-                self.updateTimeLabel()
+                self.updateDynamicLabels()
             }
         }
     }
     
     
     
-    func updateTimeLabel() {
+    func updateDynamicLabels() {
         timeLabel?.text = timeToString(from: game?.stopwatch.activeDuration ?? 0.0)
+        distanceLabel?.text = formatDistance(distance: game?.track.distance)
 
     }
     
