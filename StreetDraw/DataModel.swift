@@ -51,7 +51,7 @@ struct GameResult {
     let challenge: Challenge
     let track: Track
     let distance: CLLocationDistance
-    let duration: TimeInterval?
+    let duration: TimeInterval
     let accuracy: Float
     let score: Int
 }

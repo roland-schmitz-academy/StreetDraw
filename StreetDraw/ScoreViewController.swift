@@ -38,7 +38,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         accuracyLabel.text = "\((gameResult!.accuracy) * 100) %"
         pointsLabel.text = "\(gameResult!.score)"
         distanceLabel.text = "\(gameResult!.distance) km"
-        timeLabel.text = "\(gameResult!.duration)"
+        timeLabel.text = timeToString(from: gameResult!.duration)
         
         // todo Pasquale: fill the labels wuth the game results:
 
