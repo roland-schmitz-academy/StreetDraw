@@ -9,6 +9,8 @@
 import UIKit
 import CoreLocation
 import MapKit
+import AVKit
+import AVFoundation
 
 class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
@@ -22,6 +24,18 @@ class StartGameViewController: UIViewController, CLLocationManagerDelegate, MKMa
     @IBOutlet weak var timeLimitLabel: UILabel!
     @IBOutlet weak var timeLimitCaption: UILabel!
     @IBOutlet weak var minDistanceCaption: UILabel!
+   
+    @IBAction func playVideo(_ sender: Any) {
+        guard let path = Bundle.main.path(forResource: "howToStart", ofType: "mov") else {return}
+        let videoURL = URL(fileURLWithPath: path)
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        
+        self.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

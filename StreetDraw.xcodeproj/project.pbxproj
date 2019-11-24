@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0B7A0A238A873300ADE3C7 /* howToStart.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4C0B7A09238A873200ADE3C7 /* howToStart.mov */; };
 		4C41D07F2388002A006E9682 /* timeToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C41D07E2388002A006E9682 /* timeToString.swift */; };
 		4C5AFDF023870F0F00A9BC1C /* GameResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */; };
 		4CC4672A2385A34000CC3B49 /* app-icons in Resources */ = {isa = PBXBuildFile; fileRef = 4CC467292385A34000CC3B49 /* app-icons */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C0B7A09238A873200ADE3C7 /* howToStart.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = howToStart.mov; sourceTree = "<group>"; };
 		4C41D07E2388002A006E9682 /* timeToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeToString.swift; sourceTree = "<group>"; };
 		4C5AFDEF23870F0F00A9BC1C /* GameResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResultTableViewCell.swift; sourceTree = "<group>"; };
 		4CC467292385A34000CC3B49 /* app-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "app-icons"; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				4CC467292385A34000CC3B49 /* app-icons */,
 				FC5B05942381B02C0095A43B /* Assets.xcassets */,
+				4C0B7A09238A873200ADE3C7 /* howToStart.mov */,
 				FC5B05992381B02C0095A43B /* Info.plist */,
 				FC5B058B2381B02B0095A43B /* AppDelegate.swift */,
 				FC5B058D2381B02B0095A43B /* SceneDelegate.swift */,
@@ -208,6 +211,7 @@
 			files = (
 				FCBCF2AE2385FB030018A552 /* PlayGame.storyboard in Resources */,
 				FCD5AA962381F02F00738DCB /* Main.storyboard in Resources */,
+				4C0B7A0A238A873300ADE3C7 /* howToStart.mov in Resources */,
 				FCD5AA9B2381F02F00738DCB /* Achievements.storyboard in Resources */,
 				FCD5AA972381F02F00738DCB /* Settings.storyboard in Resources */,
 				FCBCF2B02385FFB60018A552 /* StartGame.storyboard in Resources */,
