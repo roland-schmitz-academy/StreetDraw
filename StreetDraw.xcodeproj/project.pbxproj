@@ -39,6 +39,7 @@
 		FCD5AAA72383E69000738DCB /* UILoggingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */; };
 		FCD5AAA92383FC8900738DCB /* ChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */; };
 		FCE7FF112389661A00C30A76 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF102389661A00C30A76 /* Game.swift */; };
+		FCE7FF132389F92E00C30A76 /* TestStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		FCD5AAA62383E69000738DCB /* UILoggingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoggingViewController.swift; sourceTree = "<group>"; };
 		FCD5AAA82383FC8900738DCB /* ChallengeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		FCE7FF102389661A00C30A76 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStopwatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				54C76DBF23881615008F96CD /* PersisData.swift */,
 				FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */,
 				FCE7FF102389661A00C30A76 /* Game.swift */,
+				FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */,
 			);
 			path = StreetDraw;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE7FF132389F92E00C30A76 /* TestStopwatch.swift in Sources */,
 				FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */,
 				FCBCF2AC2385F3B80018A552 /* RoundedButton.swift in Sources */,
 				FCBCF2B6238746390018A552 /* PlayGameViewController.swift in Sources */,

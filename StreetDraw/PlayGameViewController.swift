@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class PlayGameViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class PlayGameViewController: UIViewController, MKMapViewDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var shapeOverlay: MKOverlay?
     var timer: Timer?
@@ -46,10 +46,8 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate, CLLocationMan
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        appDelegate.locationManager?.delegate = self
-        appDelegate.requestLocationAuthorization()
-        mapView.showsUserLocation = true
         game?.start()
+        mapView.showsUserLocation = true
         updateButtons()
         if let shapeOverlay = shapeOverlay {
             mapView.addOverlay(shapeOverlay)
@@ -57,14 +55,14 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate, CLLocationMan
             mapView.setVisibleMapRect(bounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 ), animated: true)
 
         }
-        
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [unowned self] timer in
             DispatchQueue.main.async {
                 self.updateTimeLabel()
             }
         }
-        
     }
+    
+    
     
     func updateTimeLabel() {
         timeLabel?.text = timeToString(from: game?.stopwatch.activeDuration ?? 0.0)
