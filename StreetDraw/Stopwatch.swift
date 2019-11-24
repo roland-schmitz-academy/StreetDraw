@@ -7,41 +7,41 @@
 
 import Foundation
 
-var startingTime:TimeInterval = 0.0
-var stopingTime : TimeInterval = 0.0
-var lastPauseTime: TimeInterval = 0.0
-var totalPauseTime : TimeInterval = 0.0
-var activeDur: TimeInterval = 0.0
-var isCont: Int = 0
-
-
 class Stopwatch {
+    var startingTime:TimeInterval = 0.0
+    var stopingTime : TimeInterval = 0.0
+    var lastPauseTime: TimeInterval = 0.0
+    var totalPauseTime : TimeInterval = 0.0
+    var activeDur: TimeInterval = 0.0
+    var started:Bool = false
+    var paused:Bool = false
+    
     func start() {
         startingTime = Date().timeIntervalSince1970
+        started = true
+        paused = false
+        
     }
     
     func stop() {
         stopingTime = Date().timeIntervalSince1970
-        isCont = 0
-        activeDur = stopingTime-startingTime-totalPauseTime
+        started = false
+        paused = true
         
     }
     
     func pause() {
         // todo
         lastPauseTime = Date().timeIntervalSince1970
-        isCont = 0
-        activeDur = lastPauseTime - startingTime - totalPauseTime
-        
-        
-        
+        paused = true
     }
     
     func `continue`() {
         let cont = Date().timeIntervalSince1970
         totalPauseTime += cont - lastPauseTime
         lastPauseTime = 0.0
-        isCont = 1
+        paused = false
+        
     }
     
     var overallDuration: TimeInterval {
@@ -50,17 +50,22 @@ class Stopwatch {
     }
 
     var activeDuration: TimeInterval {
-     if (activeDur == 0.0) {
-                activeDur = Date().timeIntervalSince1970 - startingTime
-                return activeDur
-            
-            }else if(isCont == 1 ){
-                
+        if(!started && !paused){
+            activeDur = 0.0
+            return activeDur
+        }
+        else if (started && !paused) {
                 activeDur = Date().timeIntervalSince1970 - startingTime - totalPauseTime
                 return activeDur
-            }else{
+            
+            }else if (started && paused){
+            activeDur  = lastPauseTime - startingTime - totalPauseTime
                 return activeDur
-            }
+        }else if (!started && paused){
+             activeDur = stopingTime - startingTime - totalPauseTime
+            return activeDur
+        }
+        return activeDur
     }
     
 
