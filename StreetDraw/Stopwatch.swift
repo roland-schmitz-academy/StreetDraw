@@ -24,10 +24,13 @@ class Stopwatch {
     }
     
     func stop() {
-        stopingTime = Date().timeIntervalSince1970
+        if paused {
+            stopingTime = lastPauseTime
+        } else {
+            stopingTime = Date().timeIntervalSince1970
+        }
         started = false
         paused = true
-        
     }
     
     func pause() {
