@@ -154,10 +154,6 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         self.trackOverlay = trackOverlay
     }
     
-   
-    
-  
-    
     func getPointOfOverlay(shapeOverlay: MKOverlay?)-> [CGPoint]{
         var points: [CGPoint] = []
         self.shapeOverlay = shapeOverlay
@@ -174,7 +170,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     func createShape(points : [CGPoint]) -> Shape{
         let shape = Shape(points: points)
         return shape
-      }
+    }
              
              
 }

@@ -21,11 +21,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>needed</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>always</string>
+	<string>Location Services are used to draw on the map during gameplay even when the app is the in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Needed to display your location on the map and to draw on the map.</string>
+	<string>Location Services are used to display your location and to draw on the map during gameplay.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
