@@ -47,16 +47,31 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         // add the shapeOverlay to the map
         if let shapeOverlay = shapeOverlay {
             mapView.addOverlay(shapeOverlay)
-            let bounds = shapeOverlay.boundingMapRect
+        }
+       
+        // add the final trackOverlay to the map
+        if let trackOverlay = trackOverlay {
+            mapView.addOverlay(trackOverlay)
+        }
+
+        let shapeOverlayBounds = shapeOverlay?.boundingMapRect
+        let trackOverlayBounds = trackOverlay?.boundingMapRect
+
+        // calculate the union of shape and track to show them both in the final mapview
+        var bounds: MKMapRect?
+        if let shapeBounds = shapeOverlayBounds, let trackBounds = trackOverlayBounds {
+            bounds = shapeBounds.union(trackBounds)
+        }
+        else {
+            bounds = shapeOverlayBounds ?? trackOverlayBounds
+        }
+        if let bounds = bounds {
             // to let the shape appear on the upper half of the map:
             let doubleBounds = MKMapRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: bounds.height * 2)
             // give it a border
             let insetBounds = doubleBounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 )
             mapView.setVisibleMapRect(insetBounds, animated: true)
         }
-        
-        // todo Roland: add the trackOverlay to the map
-        
         
         // show the shape in the results box
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))

@@ -130,7 +130,7 @@ class PlayGameViewController: UIViewController, MKMapViewDelegate {
             game!.end()
             if let scoreViewController = segue.destination as? ScoreViewController {
                 scoreViewController.prepareForGameResult(gameResult: game!.gameResult)
-                scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: nil)
+                scoreViewController.prepareOverlays(shapeOverlay: shapeOverlay, trackOverlay: game!.track.createOverlay())
             }
         }
     }

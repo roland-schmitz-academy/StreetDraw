@@ -42,6 +42,7 @@
 		FCE7FF112389661A00C30A76 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF102389661A00C30A76 /* Game.swift */; };
 		FCE7FF132389F92E00C30A76 /* TestStopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */; };
 		FCE7FF15238A8A6600C30A76 /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */; };
+		FCE7FF17238AA51700C30A76 /* Overlays.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7FF16238AA51700C30A76 /* Overlays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		FCE7FF102389661A00C30A76 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestStopwatch.swift; sourceTree = "<group>"; };
 		FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
+		FCE7FF16238AA51700C30A76 /* Overlays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				FC5F1FA3238888D00080E3F3 /* MapKitOverlays.swift */,
 				FCE7FF102389661A00C30A76 /* Game.swift */,
 				FCE7FF14238A8A6600C30A76 /* DistanceFormatter.swift */,
+				FCE7FF16238AA51700C30A76 /* Overlays.swift */,
 				FCE7FF122389F92E00C30A76 /* TestStopwatch.swift */,
 			);
 			path = StreetDraw;
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE7FF17238AA51700C30A76 /* Overlays.swift in Sources */,
 				FCE7FF132389F92E00C30A76 /* TestStopwatch.swift in Sources */,
 				FC5B058C2381B02B0095A43B /* AppDelegate.swift in Sources */,
 				FCBCF2AC2385F3B80018A552 /* RoundedButton.swift in Sources */,

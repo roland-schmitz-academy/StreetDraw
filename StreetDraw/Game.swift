@@ -77,16 +77,6 @@ class Game: NSObject, CLLocationManagerDelegate {
         
     }
 
-    func createOverlay(previousLocation: CLLocation?, newLocations: [CLLocation]) -> MKOverlay? {
-        var coordinates: [CLLocationCoordinate2D] = []
-        if let lastLocation = previousLocation?.coordinate {
-            coordinates.append(lastLocation)
-        }
-        coordinates.append(contentsOf: newLocations.map { location in location.coordinate })
-        guard coordinates.count > 1 else { return nil }
-        return MKPolyline(coordinates: coordinates, count: coordinates.count)
-    }
-    
     func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
         print("######## locationManagerDidPauseLocationUpdates")
     }

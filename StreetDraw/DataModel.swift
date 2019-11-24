@@ -62,6 +62,10 @@ class Track {
         }
         return accumulatedDistance
     }
+    
+    func createOverlay() -> MKOverlay? {
+        return Walk_n_Draw.createOverlay(locations: locations)
+    }
 }
 
 struct GameResult {
