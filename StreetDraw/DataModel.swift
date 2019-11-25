@@ -49,7 +49,7 @@ class Track {
     var lastLocation: CLLocation? { locations.last }
     
     func addLocations(newLocations: [CLLocation]) {
-        let accurateLocations = newLocations.filter { location in location.horizontalAccuracy >= 0.0 && location.horizontalAccuracy < 100.0 }
+        let accurateLocations = newLocations // todo fix this: newLocations.filter { location in location.horizontalAccuracy >= 0.0 && location.horizontalAccuracy < 100.0 }
         locations += accurateLocations
     }
     
