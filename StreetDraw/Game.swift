@@ -113,13 +113,19 @@ class Game: NSObject, CLLocationManagerDelegate {
     }
 
     func calculateAccuracy(shapeOverlay: MKOverlay?, trackOverlay: MKOverlay?) -> Double {
-        var accumulatedDistance = 0.0
+        var accumulatedAcurracy = 0.0
         var numberOfChecks = 0
 
-        func aggregateMinimumDistance(point: MKMapPoint, to referencePoints: [MKMapPoint]) {
+        func getAccuracyOf(distance: Double) -> Double {
+            let accuracy: Double = 1.0 - ( max(100.0, min(distance, 500.0)) - 100.0) / 400.0
+            //print("index \(numberOfChecks) distance \(distance) accuracy \(accuracy)")
+            return accuracy
+        }
+        
+        func aggregateAccuracyOfDistance(point: MKMapPoint, to referencePoints: [MKMapPoint]) {
             let distance = referencePoints.map { refPoint in refPoint.distance(to: point) }.min() ?? 500
             print("distance=\(distance)")
-            accumulatedDistance += distance
+            accumulatedAcurracy += getAccuracyOf(distance: distance)
             numberOfChecks += 1
         }
 
@@ -135,13 +141,14 @@ class Game: NSObject, CLLocationManagerDelegate {
                 (0..<sectionCount).forEach { sectionIndex in
                     let section = Double(sectionIndex)
                     let intermediatePoint = MKMapPoint(x: startPoint.x + section * dx, y: startPoint.y + section * dy )
-                    aggregateMinimumDistance(point: intermediatePoint, to: trackMapPoints)
+                    aggregateAccuracyOfDistance(point: intermediatePoint, to: trackMapPoints)
                 }
             }
-            let meanDistance = accumulatedDistance / Double(numberOfChecks)
-            let accuracy = 1.0 - ((max(100.0, min(meanDistance, 500.0)) - 100.0) / 400.0)
-            return accuracy
+            let averageAcurracy = accumulatedAcurracy / Double(numberOfChecks)
+//            print("averageAcurracy: \(averageAcurracy)")
+            return averageAcurracy
         }
+//        print("no averageAcurracy returning 0.0")
         return 0.0
     }
     
