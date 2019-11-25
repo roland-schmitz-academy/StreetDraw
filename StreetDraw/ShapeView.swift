@@ -66,19 +66,29 @@ class ShapeView: UIView {
         path.lineJoinStyle = .round
         tintColor.setStroke()
 
-        let drawingPoints = getDrawingPoints()
-
-        if let firstPoint = drawingPoints.first {
-            path.move(to: firstPoint)
-            for drawingPoint in drawingPoints {
-                path.addLine(to: drawingPoint)
-            }
-        } else {
+        guard shapeBounds != nil else {
             // Draw a cross in case we dont have a shape
             path.move(to: CGPoint(x: 0.0 , y: 0.0))
             path.addLine(to: CGPoint( x: self.bounds.width, y: self.bounds.height))
             path.move(to: CGPoint(x: 0.0 , y: self.bounds.height))
             path.addLine(to: CGPoint( x: self.bounds.width, y: 0.0))
+            return
+        }
+
+        let drawingPoints = getDrawingPoints()
+
+        if let firstPoint = drawingPoints.first {
+            path.move(to: firstPoint)
+        
+            let remainingPoints = drawingPoints.dropFirst()
+            
+            if remainingPoints.isEmpty {
+                path.addLine(to: firstPoint)
+            } else {
+                for drawingPoint in drawingPoints {
+                    path.addLine(to: drawingPoint)
+                }
+            }
         }
         path.stroke()
     }
