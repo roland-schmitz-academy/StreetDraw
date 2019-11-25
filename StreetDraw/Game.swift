@@ -56,7 +56,6 @@ class Game: NSObject, CLLocationManagerDelegate {
 
     var gameResult: GameResult {
         get {
-            // todo calculate accuracy and score and replace fake values with actual values
             let accuracy = calculateAccuracy(shapeOverlay: shapeOverlay, trackOverlay: track.createOverlay())
             let distance = track.distance
             let duration = stopwatch.activeDuration
