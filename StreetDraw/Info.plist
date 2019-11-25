@@ -22,6 +22,8 @@
 	<true/>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Location Services are used to draw on the map during gameplay even when the app is the in the background.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Location Services are used to draw on the map during gameplay even when the app is the in the background.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location Services are used to display your location and to draw on the map during gameplay.</string>
 	<key>UIApplicationSceneManifest</key>
