@@ -85,7 +85,7 @@ class ShapeView: UIView {
             if remainingPoints.isEmpty {
                 path.addLine(to: firstPoint)
             } else {
-                for drawingPoint in drawingPoints {
+                for drawingPoint in remainingPoints {
                     path.addLine(to: drawingPoint)
                 }
             }
