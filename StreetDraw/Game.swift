@@ -134,7 +134,7 @@ class Game: NSObject, CLLocationManagerDelegate {
             (0..<shapeMapPoints.count - 1).forEach { shapeMapPointIndex in
                 let startPoint = shapeMapPoints[shapeMapPointIndex]
                 let endPoint = shapeMapPoints[shapeMapPointIndex+1]
-                let sectionCount = Int(startPoint.distance(to: endPoint) / 100)
+                let sectionCount = Int(startPoint.distance(to: endPoint) / 100) + 1
                 let dx = (endPoint.x - startPoint.x) / Double(sectionCount)
                 let dy = (endPoint.y - startPoint.y) / Double(sectionCount)
                 (0..<sectionCount).forEach { sectionIndex in
