@@ -116,7 +116,10 @@ class Game: NSObject, CLLocationManagerDelegate {
         var numberOfChecks = 0
 
         func getAccuracyOf(distance: Double) -> Double {
-            let accuracy: Double = 1.0 - ( max(100.0, min(distance, 500.0)) - 100.0) / 400.0
+            let fullAccuracyDistance = 50.0
+            let noAccuracyDistance = 250.0
+            let interpolatedDistanceRange = noAccuracyDistance - fullAccuracyDistance
+            let accuracy: Double = 1.0 - ( max(fullAccuracyDistance, min(distance, noAccuracyDistance)) - fullAccuracyDistance) / interpolatedDistanceRange
             //print("index \(numberOfChecks) distance \(distance) accuracy \(accuracy)")
             return accuracy
         }
