@@ -146,12 +146,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufK-VT-Myd">
                                 <rect key="frame" x="0.0" y="693" width="414" height="142"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLk-ZW-qyG" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
-                                        <rect key="frame" x="17" y="39" width="180" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLk-ZW-qyG" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
+                                        <rect key="frame" x="17" y="39" width="175" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="TON-m6-blh"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <state key="normal" title="Retry">
@@ -170,7 +168,7 @@
                                         <rect key="frame" x="17" y="107" width="378" height="47"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="47" id="aea-PU-tlS"/>
+                                            <constraint firstAttribute="height" constant="47" id="OM1-nR-buu"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -186,8 +184,9 @@
                                             <action selector="nextChallengeButtonTouched:" destination="IU9-if-kOy" eventType="touchUpInside" id="dsa-SZ-imh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-XM-q1s" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
-                                        <rect key="frame" x="215" y="39" width="180" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN1-XM-q1s" customClass="RoundedButton" customModule="Walk_n_Draw" customModuleProvider="target">
+                                        <rect key="frame" x="220" y="39" width="175" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -206,17 +205,10 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstItem="IN1-XM-q1s" firstAttribute="leading" secondItem="vLk-ZW-qyG" secondAttribute="trailing" constant="18" id="9yg-Bh-cg7"/>
-                                    <constraint firstItem="vLk-ZW-qyG" firstAttribute="leading" secondItem="ufK-VT-Myd" secondAttribute="leading" constant="17" id="KLG-wR-vaT"/>
-                                    <constraint firstAttribute="bottom" secondItem="cgx-Xf-UM7" secondAttribute="bottom" constant="-12" id="Nvd-dk-3gj"/>
-                                    <constraint firstItem="vLk-ZW-qyG" firstAttribute="leading" secondItem="cgx-Xf-UM7" secondAttribute="leading" id="XrA-tq-Maz"/>
-                                    <constraint firstItem="vLk-ZW-qyG" firstAttribute="top" secondItem="ufK-VT-Myd" secondAttribute="top" constant="39" id="bWv-Ln-bCy"/>
+                                    <constraint firstAttribute="trailing" secondItem="cgx-Xf-UM7" secondAttribute="trailing" constant="19" id="7Fk-YK-9Gh"/>
+                                    <constraint firstItem="cgx-Xf-UM7" firstAttribute="leading" secondItem="ufK-VT-Myd" secondAttribute="leading" constant="17" id="Xwa-lp-dnl"/>
                                     <constraint firstAttribute="height" constant="142" id="cFB-4e-giO"/>
-                                    <constraint firstItem="vLk-ZW-qyG" firstAttribute="top" secondItem="IN1-XM-q1s" secondAttribute="top" id="g8g-zD-cbz"/>
-                                    <constraint firstItem="vLk-ZW-qyG" firstAttribute="baseline" secondItem="IN1-XM-q1s" secondAttribute="firstBaseline" id="oac-6x-KlK"/>
-                                    <constraint firstAttribute="trailing" secondItem="IN1-XM-q1s" secondAttribute="trailing" constant="19" id="w9M-O1-owY"/>
-                                    <constraint firstItem="IN1-XM-q1s" firstAttribute="trailing" secondItem="cgx-Xf-UM7" secondAttribute="trailing" id="zHz-Qm-3k5"/>
-                                    <constraint firstItem="cgx-Xf-UM7" firstAttribute="top" secondItem="vLk-ZW-qyG" secondAttribute="bottom" constant="20" id="zuW-Ig-LzX"/>
+                                    <constraint firstAttribute="bottom" secondItem="cgx-Xf-UM7" secondAttribute="bottom" constant="-12" id="wTK-0y-ch7"/>
                                 </constraints>
                             </view>
                         </subviews>
