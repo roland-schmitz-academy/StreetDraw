@@ -22,6 +22,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var blueBoxView: UIView!
     
     // todo Pasquale: add outlets for result labels
     
@@ -35,27 +36,36 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
         print("ScoreViewController.viewWillAppear()")
         setupUserTrackingButton()
         mapView.showsUserLocation = true
-        //mapView.userTrackingMode = .follow
+        mapView.userTrackingMode = .none
 
         // fill the labels wuth the game results:
         accuracyLabel.text = String(format: "%0.1f %%", (gameResult?.accuracy ?? 0.0) * 100)
         pointsLabel.text = "\(gameResult?.score ?? 0)"
         distanceLabel.text = formatDistance(distance: gameResult?.distance)
         timeLabel.text = timeToString(from: gameResult?.duration ?? 0.0)
+
+        showShapesOnMap()
+        showShapesInBlueBox()
+    }
+    
+    func showShapesOnMap() {
         
         // add the shapeOverlay to the map
         if let shapeOverlay = shapeOverlay {
             mapView.addOverlay(shapeOverlay)
         }
-       
+
         // add the final trackOverlay to the map
         if let trackOverlay = trackOverlay {
             mapView.addOverlay(trackOverlay)
         }
 
+    }
+    
+    fileprivate func setVisibleMapRectToShowShapes() {
         let shapeOverlayBounds = shapeOverlay?.boundingMapRect
         let trackOverlayBounds = trackOverlay?.boundingMapRect
-
+        
         // calculate the union of shape and track to show them both in the final mapview
         var bounds: MKMapRect?
         if let shapeBounds = shapeOverlayBounds, let trackBounds = trackOverlayBounds {
@@ -65,13 +75,24 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
             bounds = shapeOverlayBounds ?? trackOverlayBounds
         }
         if let bounds = bounds {
-            // to let the shape appear on the upper half of the map:
-            let doubleBounds = MKMapRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.width, height: bounds.height * 2)
-            // give it a border
-            let insetBounds = doubleBounds.insetBy(dx: -bounds.width / 5, dy: -bounds.height / 5 )
-            mapView.setVisibleMapRect(insetBounds, animated: true)
+            print("mapView.frame.maxY: \(mapView.frame.maxY)")
+            print("mapView.frame.minY: \(mapView.frame.minY)")
+            print("blueBoxView.frame.maxY: \(blueBoxView.frame.maxY)")
+            print("blueBoxView.frame.minY: \(blueBoxView.frame.minY)")
+            let topHeight = blueBoxView.frame.minY - mapView.frame.minY
+            let heightFactor = mapView.bounds.height / topHeight
+            print("hightFactor: \(heightFactor)")
+            let sideMargin = bounds.width / 10
+            let topMargin = bounds.width / 10
+            let bottomMargin = (bounds.width / 5) * Double(heightFactor)
+
+            let marginBounds = MKMapRect(x: bounds.origin.x - sideMargin, y: bounds.origin.y - topMargin, width: bounds.width + sideMargin * 2, height: bounds.height * Double(heightFactor) + topMargin + bottomMargin)
+            
+            mapView.setVisibleMapRect(marginBounds, animated: true)
         }
-        
+    }
+    
+    func showShapesInBlueBox() {
         // show the shape in the results box
         self.shapeView.show(shape: createShape(points: getPointOfOverlay(shapeOverlay: self.shapeOverlay)))
         
@@ -85,12 +106,12 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
             self.shapeView.shapeBounds = unionBounds
             self.trackShapeView.shapeBounds = unionBounds
         }
-        
-
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         print("ScoreViewController.viewDidAppear()")
-        mapView.showsUserLocation = true
+        //mapView.showsUserLocation = true
+        self.setVisibleMapRectToShowShapes()
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -156,7 +177,7 @@ class ScoreViewController: UIViewController, MKMapViewDelegate {
     
     func getPointOfOverlay(shapeOverlay: MKOverlay?)-> [CGPoint]{
         var points: [CGPoint] = []
-        self.shapeOverlay = shapeOverlay
+//        self.shapeOverlay = shapeOverlay
         if let polyline = shapeOverlay as? MKPolyline {
             let coordinates = polyline.coordinates
             for coordinate in coordinates {
