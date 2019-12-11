@@ -69,5 +69,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func printer(){
+        
+    }
+    
 }
 
